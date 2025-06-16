@@ -13,7 +13,7 @@ If you use this code, please cite the paper given below:
     year={2024, under review}
 }
 ```
-The code for 4 models is implemented in this repository, namely: 1dCAE [\[3\]], 2dCAE (SSCNet) [4], 3dCAE [5], and HyCoT [6].
+The code for 4 models is implemented in this repository, namely: 1dCAE [\[3\]] (#3), 2dCAE (SSCNet) [4], 3dCAE [5], and HyCoT [6].
 
 
 
