@@ -1,4 +1,4 @@
-Note: This code is taken from https://git.tu-berlin.de/rsim/hycot where it was uploaded by the authors of  " HyCoT: Hyperspectral Compression Transformer with an Efficient Training" which is adapted from the CompressAI [\[2\]](#2-compressai) framework https://github.com/InterDigitalInc/CompressAI/.
+Note: This code is taken from https://git.tu-berlin.de/rsim/hycot where it was uploaded by the authors of  " HyCoT: Hyperspectral Compression Transformer with an Efficient Training" which is adapted from the CompressAI [2] framework https://github.com/InterDigitalInc/CompressAI/.
 
 
 If you use this code, please cite the paper given below:
@@ -13,7 +13,7 @@ If you use this code, please cite the paper given below:
     year={2024, under review}
 }
 ```
-The code for 4 models is implemented in this repository, namely: 1dCAE [\[3\]] (#3), 2dCAE (SSCNet) [4], 3dCAE [5], and HyCoT [6].
+The code for 4 models is implemented in this repository, namely: 1dCAE [3], 2dCAE (SSCNet) [4], 3dCAE [5], and HyCoT [6].
 
 
 
