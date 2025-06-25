@@ -1,0 +1,1367 @@
+HINER(
+  (pe_embed): PositionEncoding()
+  (encoder): Mlp(
+    (fc1): Linear(in_features=160, out_features=320, bias=True)
+    (act): GELU(approximate='none')
+    (fc2): Linear(in_features=320, out_features=288, bias=True)
+  )
+  (decoder): ModuleList(
+    (0): NeRVBlock(
+      (conv): DownConv(
+        (downconv): Conv2d(16, 105, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (norm): Identity()
+      (act): GELU(approximate='none')
+    )
+    (1): NeRVBlock(
+      (conv): UpConv(
+        (upconv): Sequential(
+          (0): Conv2d(105, 2200, kernel_size=(1, 1), stride=(1, 1))
+          (1): PixelShuffle(upscale_factor=5)
+        )
+      )
+      (norm): Identity()
+      (act): GELU(approximate='none')
+    )
+    (2): NeRVBlock(
+      (conv): UpConv(
+        (upconv): Sequential(
+          (0): Conv2d(88, 1168, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PixelShuffle(upscale_factor=4)
+        )
+      )
+      (norm): Identity()
+      (act): GELU(approximate='none')
+    )
+    (3): NeRVBlock(
+      (conv): UpConv(
+        (upconv): Sequential(
+          (0): Conv2d(73, 549, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+          (1): PixelShuffle(upscale_factor=3)
+        )
+      )
+      (norm): Identity()
+      (act): GELU(approximate='none')
+    )
+    (4): NeRVBlock(
+      (conv): UpConv(
+        (upconv): Sequential(
+          (0): Conv2d(61, 204, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+          (1): PixelShuffle(upscale_factor=2)
+        )
+      )
+      (norm): Identity()
+      (act): GELU(approximate='none')
+    )
+  )
+  (head_layer): Conv2d(51, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+)
+Encoder_0.14M_Decoder_2.47M_Total_2.5M
+[2025/06/17 12:24:12] Rank:None, Epoch[1/300], Step [1/103], lr:1.00e-04 pred_PSNR: 8.22
+[2025/06/17 12:24:13] Rank:None, Epoch[1/300], Step [51/103], lr:1.15e-04 pred_PSNR: 12.64
+[2025/06/17 12:24:13] Rank:None, Epoch[1/300], Step [101/103], lr:1.29e-04 pred_PSNR: 15.12
+[2025/06/17 12:24:13] Rank:None, Epoch[1/300], Step [103/103], lr:1.30e-04 pred_PSNR: 15.18
+[2025/06/17 12:24:14] Rank:None, Epoch[2/300], Step [1/103], lr:1.30e-04 pred_PSNR: 20.3
+[2025/06/17 12:24:14] Rank:None, Epoch[2/300], Step [51/103], lr:1.45e-04 pred_PSNR: 19.85
+[2025/06/17 12:24:15] Rank:None, Epoch[2/300], Step [101/103], lr:1.59e-04 pred_PSNR: 20.16
+[2025/06/17 12:24:15] Rank:None, Epoch[2/300], Step [103/103], lr:1.60e-04 pred_PSNR: 20.17
+[2025/06/17 12:24:16] Rank:None, Epoch[3/300], Step [1/103], lr:1.60e-04 pred_PSNR: 22.12
+[2025/06/17 12:24:16] Rank:None, Epoch[3/300], Step [51/103], lr:1.75e-04 pred_PSNR: 22.13
+[2025/06/17 12:24:17] Rank:None, Epoch[3/300], Step [101/103], lr:1.89e-04 pred_PSNR: 22.07
+[2025/06/17 12:24:17] Rank:None, Epoch[3/300], Step [103/103], lr:1.90e-04 pred_PSNR: 22.08
+[2025/06/17 12:24:17] Rank:None, Epoch[4/300], Step [1/103], lr:1.90e-04 pred_PSNR: 21.78
+[2025/06/17 12:24:18] Rank:None, Epoch[4/300], Step [51/103], lr:2.05e-04 pred_PSNR: 23.13
+[2025/06/17 12:24:19] Rank:None, Epoch[4/300], Step [101/103], lr:2.19e-04 pred_PSNR: 23.4
+[2025/06/17 12:24:19] Rank:None, Epoch[4/300], Step [103/103], lr:2.20e-04 pred_PSNR: 23.35
+[2025/06/17 12:24:19] Rank:None, Epoch[5/300], Step [1/103], lr:2.20e-04 pred_PSNR: 25.66
+[2025/06/17 12:24:20] Rank:None, Epoch[5/300], Step [51/103], lr:2.35e-04 pred_PSNR: 24.16
+[2025/06/17 12:24:21] Rank:None, Epoch[5/300], Step [101/103], lr:2.49e-04 pred_PSNR: 24.51
+[2025/06/17 12:24:21] Rank:None, Epoch[5/300], Step [103/103], lr:2.50e-04 pred_PSNR: 24.48
+[2025/06/17 12:24:21] Rank:None, Epoch[6/300], Step [1/103], lr:2.50e-04 pred_PSNR: 26.23
+[2025/06/17 12:24:22] Rank:None, Epoch[6/300], Step [51/103], lr:2.65e-04 pred_PSNR: 25.34
+[2025/06/17 12:24:22] Rank:None, Epoch[6/300], Step [101/103], lr:2.79e-04 pred_PSNR: 25.25
+[2025/06/17 12:24:22] Rank:None, Epoch[6/300], Step [103/103], lr:2.80e-04 pred_PSNR: 25.23
+[2025/06/17 12:24:23] Rank:None, Epoch[7/300], Step [1/103], lr:2.80e-04 pred_PSNR: 22.64
+[2025/06/17 12:24:24] Rank:None, Epoch[7/300], Step [51/103], lr:2.95e-04 pred_PSNR: 25.62
+[2025/06/17 12:24:24] Rank:None, Epoch[7/300], Step [101/103], lr:3.09e-04 pred_PSNR: 25.69
+[2025/06/17 12:24:24] Rank:None, Epoch[7/300], Step [103/103], lr:3.10e-04 pred_PSNR: 25.71
+[2025/06/17 12:24:25] Rank:None, Epoch[8/300], Step [1/103], lr:3.10e-04 pred_PSNR: 27.07
+[2025/06/17 12:24:25] Rank:None, Epoch[8/300], Step [51/103], lr:3.25e-04 pred_PSNR: 26.11
+[2025/06/17 12:24:26] Rank:None, Epoch[8/300], Step [101/103], lr:3.39e-04 pred_PSNR: 26.39
+[2025/06/17 12:24:26] Rank:None, Epoch[8/300], Step [103/103], lr:3.40e-04 pred_PSNR: 26.42
+[2025/06/17 12:24:27] Rank:None, Epoch[9/300], Step [1/103], lr:3.40e-04 pred_PSNR: 30.36
+[2025/06/17 12:24:27] Rank:None, Epoch[9/300], Step [51/103], lr:3.55e-04 pred_PSNR: 27.27
+[2025/06/17 12:24:28] Rank:None, Epoch[9/300], Step [101/103], lr:3.69e-04 pred_PSNR: 27.19
+[2025/06/17 12:24:28] Rank:None, Epoch[9/300], Step [103/103], lr:3.70e-04 pred_PSNR: 27.2
+[2025/06/17 12:24:28] Rank:None, Epoch[10/300], Step [1/103], lr:3.70e-04 pred_PSNR: 24.33
+[2025/06/17 12:24:29] Rank:None, Epoch[10/300], Step [51/103], lr:3.85e-04 pred_PSNR: 27.07
+[2025/06/17 12:24:30] Rank:None, Epoch[10/300], Step [101/103], lr:3.99e-04 pred_PSNR: 27.77
+[2025/06/17 12:24:30] Rank:None, Epoch[10/300], Step [103/103], lr:4.00e-04 pred_PSNR: 27.72
+[2025/06/17 12:24:30] Rank:None, Epoch[11/300], Step [1/103], lr:4.00e-04 pred_PSNR: 24.68
+[2025/06/17 12:24:31] Rank:None, Epoch[11/300], Step [51/103], lr:4.15e-04 pred_PSNR: 27.7
+[2025/06/17 12:24:32] Rank:None, Epoch[11/300], Step [101/103], lr:4.29e-04 pred_PSNR: 28.33
+[2025/06/17 12:24:32] Rank:None, Epoch[11/300], Step [103/103], lr:4.30e-04 pred_PSNR: 28.38
+[2025/06/17 12:24:32] Rank:None, Epoch[12/300], Step [1/103], lr:4.30e-04 pred_PSNR: 30.16
+[2025/06/17 12:24:33] Rank:None, Epoch[12/300], Step [51/103], lr:4.45e-04 pred_PSNR: 29.4
+[2025/06/17 12:24:33] Rank:None, Epoch[12/300], Step [101/103], lr:4.59e-04 pred_PSNR: 29.73
+[2025/06/17 12:24:33] Rank:None, Epoch[12/300], Step [103/103], lr:4.60e-04 pred_PSNR: 29.72
+[2025/06/17 12:24:34] Rank:None, Epoch[13/300], Step [1/103], lr:4.60e-04 pred_PSNR: 31.94
+[2025/06/17 12:24:35] Rank:None, Epoch[13/300], Step [51/103], lr:4.75e-04 pred_PSNR: 30.12
+[2025/06/17 12:24:35] Rank:None, Epoch[13/300], Step [101/103], lr:4.89e-04 pred_PSNR: 30.29
+[2025/06/17 12:24:35] Rank:None, Epoch[13/300], Step [103/103], lr:4.90e-04 pred_PSNR: 30.31
+[2025/06/17 12:24:36] Rank:None, Epoch[14/300], Step [1/103], lr:4.90e-04 pred_PSNR: 30.77
+[2025/06/17 12:24:36] Rank:None, Epoch[14/300], Step [51/103], lr:5.05e-04 pred_PSNR: 30.39
+[2025/06/17 12:24:37] Rank:None, Epoch[14/300], Step [101/103], lr:5.19e-04 pred_PSNR: 30.58
+[2025/06/17 12:24:37] Rank:None, Epoch[14/300], Step [103/103], lr:5.20e-04 pred_PSNR: 30.6
+[2025/06/17 12:24:38] Rank:None, Epoch[15/300], Step [1/103], lr:5.20e-04 pred_PSNR: 33.6
+[2025/06/17 12:24:38] Rank:None, Epoch[15/300], Step [51/103], lr:5.35e-04 pred_PSNR: 31.46
+[2025/06/17 12:24:39] Rank:None, Epoch[15/300], Step [101/103], lr:5.49e-04 pred_PSNR: 31.6
+[2025/06/17 12:24:39] Rank:None, Epoch[15/300], Step [103/103], lr:5.50e-04 pred_PSNR: 31.59
+[2025/06/17 12:24:39] Rank:None, Epoch[16/300], Step [1/103], lr:5.50e-04 pred_PSNR: 32.22
+[2025/06/17 12:24:40] Rank:None, Epoch[16/300], Step [51/103], lr:5.65e-04 pred_PSNR: 31.55
+[2025/06/17 12:24:41] Rank:None, Epoch[16/300], Step [101/103], lr:5.79e-04 pred_PSNR: 31.38
+[2025/06/17 12:24:41] Rank:None, Epoch[16/300], Step [103/103], lr:5.80e-04 pred_PSNR: 31.37
+[2025/06/17 12:24:41] Rank:None, Epoch[17/300], Step [1/103], lr:5.80e-04 pred_PSNR: 32.13
+[2025/06/17 12:24:42] Rank:None, Epoch[17/300], Step [51/103], lr:5.95e-04 pred_PSNR: 30.38
+[2025/06/17 12:24:43] Rank:None, Epoch[17/300], Step [101/103], lr:6.09e-04 pred_PSNR: 30.46
+[2025/06/17 12:24:43] Rank:None, Epoch[17/300], Step [103/103], lr:6.10e-04 pred_PSNR: 30.52
+[2025/06/17 12:24:43] Rank:None, Epoch[18/300], Step [1/103], lr:6.10e-04 pred_PSNR: 34.87
+[2025/06/17 12:24:44] Rank:None, Epoch[18/300], Step [51/103], lr:6.25e-04 pred_PSNR: 32.2
+[2025/06/17 12:24:44] Rank:None, Epoch[18/300], Step [101/103], lr:6.39e-04 pred_PSNR: 32.14
+[2025/06/17 12:24:44] Rank:None, Epoch[18/300], Step [103/103], lr:6.40e-04 pred_PSNR: 32.19
+[2025/06/17 12:24:45] Rank:None, Epoch[19/300], Step [1/103], lr:6.40e-04 pred_PSNR: 35.4
+[2025/06/17 12:24:46] Rank:None, Epoch[19/300], Step [51/103], lr:6.55e-04 pred_PSNR: 31.66
+[2025/06/17 12:24:46] Rank:None, Epoch[19/300], Step [101/103], lr:6.69e-04 pred_PSNR: 32.02
+[2025/06/17 12:24:46] Rank:None, Epoch[19/300], Step [103/103], lr:6.70e-04 pred_PSNR: 32.01
+[2025/06/17 12:24:47] Rank:None, Epoch[20/300], Step [1/103], lr:6.70e-04 pred_PSNR: 32.77
+[2025/06/17 12:24:47] Rank:None, Epoch[20/300], Step [51/103], lr:6.85e-04 pred_PSNR: 32.96
+[2025/06/17 12:24:48] Rank:None, Epoch[20/300], Step [101/103], lr:6.99e-04 pred_PSNR: 33.42
+[2025/06/17 12:24:48] Rank:None, Epoch[20/300], Step [103/103], lr:7.00e-04 pred_PSNR: 33.39
+[2025/06/17 12:24:49] Rank:None, Epoch[21/300], Step [1/103], lr:7.00e-04 pred_PSNR: 36.02
+[2025/06/17 12:24:49] Rank:None, Epoch[21/300], Step [51/103], lr:7.15e-04 pred_PSNR: 34.03
+[2025/06/17 12:24:50] Rank:None, Epoch[21/300], Step [101/103], lr:7.29e-04 pred_PSNR: 33.66
+[2025/06/17 12:24:50] Rank:None, Epoch[21/300], Step [103/103], lr:7.30e-04 pred_PSNR: 33.56
+[2025/06/17 12:24:50] Rank:None, Epoch[22/300], Step [1/103], lr:7.30e-04 pred_PSNR: 33.59
+[2025/06/17 12:24:51] Rank:None, Epoch[22/300], Step [51/103], lr:7.45e-04 pred_PSNR: 32.9
+[2025/06/17 12:24:52] Rank:None, Epoch[22/300], Step [101/103], lr:7.59e-04 pred_PSNR: 33.41
+[2025/06/17 12:24:52] Rank:None, Epoch[22/300], Step [103/103], lr:7.60e-04 pred_PSNR: 33.42
+[2025/06/17 12:24:52] Rank:None, Epoch[23/300], Step [1/103], lr:7.60e-04 pred_PSNR: 32.47
+[2025/06/17 12:24:53] Rank:None, Epoch[23/300], Step [51/103], lr:7.75e-04 pred_PSNR: 33.51
+[2025/06/17 12:24:54] Rank:None, Epoch[23/300], Step [101/103], lr:7.89e-04 pred_PSNR: 33.72
+[2025/06/17 12:24:54] Rank:None, Epoch[23/300], Step [103/103], lr:7.90e-04 pred_PSNR: 33.76
+[2025/06/17 12:24:54] Rank:None, Epoch[24/300], Step [1/103], lr:7.90e-04 pred_PSNR: 24.16
+[2025/06/17 12:24:55] Rank:None, Epoch[24/300], Step [51/103], lr:8.05e-04 pred_PSNR: 32.32
+[2025/06/17 12:24:55] Rank:None, Epoch[24/300], Step [101/103], lr:8.19e-04 pred_PSNR: 32.44
+[2025/06/17 12:24:55] Rank:None, Epoch[24/300], Step [103/103], lr:8.20e-04 pred_PSNR: 32.44
+[2025/06/17 12:24:56] Rank:None, Epoch[25/300], Step [1/103], lr:8.20e-04 pred_PSNR: 35.85
+[2025/06/17 12:24:57] Rank:None, Epoch[25/300], Step [51/103], lr:8.35e-04 pred_PSNR: 33.36
+[2025/06/17 12:24:57] Rank:None, Epoch[25/300], Step [101/103], lr:8.49e-04 pred_PSNR: 33.84
+[2025/06/17 12:24:57] Rank:None, Epoch[25/300], Step [103/103], lr:8.50e-04 pred_PSNR: 33.87
+[2025/06/17 12:24:58] Rank:None, Epoch[26/300], Step [1/103], lr:8.50e-04 pred_PSNR: 35.62
+[2025/06/17 12:24:58] Rank:None, Epoch[26/300], Step [51/103], lr:8.65e-04 pred_PSNR: 34.78
+[2025/06/17 12:24:59] Rank:None, Epoch[26/300], Step [101/103], lr:8.79e-04 pred_PSNR: 34.76
+[2025/06/17 12:24:59] Rank:None, Epoch[26/300], Step [103/103], lr:8.80e-04 pred_PSNR: 34.8
+[2025/06/17 12:25:00] Rank:None, Epoch[27/300], Step [1/103], lr:8.80e-04 pred_PSNR: 35.17
+[2025/06/17 12:25:00] Rank:None, Epoch[27/300], Step [51/103], lr:8.95e-04 pred_PSNR: 35.27
+[2025/06/17 12:25:01] Rank:None, Epoch[27/300], Step [101/103], lr:9.09e-04 pred_PSNR: 35.17
+[2025/06/17 12:25:01] Rank:None, Epoch[27/300], Step [103/103], lr:9.10e-04 pred_PSNR: 35.13
+[2025/06/17 12:25:01] Rank:None, Epoch[28/300], Step [1/103], lr:9.10e-04 pred_PSNR: 35.74
+[2025/06/17 12:25:02] Rank:None, Epoch[28/300], Step [51/103], lr:9.25e-04 pred_PSNR: 35.63
+[2025/06/17 12:25:03] Rank:None, Epoch[28/300], Step [101/103], lr:9.39e-04 pred_PSNR: 34.93
+[2025/06/17 12:25:03] Rank:None, Epoch[28/300], Step [103/103], lr:9.40e-04 pred_PSNR: 34.89
+[2025/06/17 12:25:03] Rank:None, Epoch[29/300], Step [1/103], lr:9.40e-04 pred_PSNR: 34.93
+[2025/06/17 12:25:04] Rank:None, Epoch[29/300], Step [51/103], lr:9.55e-04 pred_PSNR: 34.96
+[2025/06/17 12:25:05] Rank:None, Epoch[29/300], Step [101/103], lr:9.69e-04 pred_PSNR: 35.46
+[2025/06/17 12:25:05] Rank:None, Epoch[29/300], Step [103/103], lr:9.70e-04 pred_PSNR: 35.43
+[2025/06/17 12:25:05] Rank:None, Epoch[30/300], Step [1/103], lr:9.70e-04 pred_PSNR: 35.28
+[2025/06/17 12:25:06] Rank:None, Epoch[30/300], Step [51/103], lr:9.85e-04 pred_PSNR: 35.47
+[2025/06/17 12:25:07] Rank:None, Epoch[30/300], Step [101/103], lr:9.99e-04 pred_PSNR: 35.6
+[2025/06/17 12:25:07] Rank:None, Epoch[30/300], Step [103/103], lr:1.00e-03 pred_PSNR: 35.65
+[2025/06/17 12:25:07] Rank:None, Eval at Step [1/103] , FPS 183.4, pred_seen_psnr: 37.9 | 
+[2025/06/17 12:25:07] Rank:None, Eval at Step [51/103] , FPS 263.8, pred_seen_psnr: 35.5 | 
+[2025/06/17 12:25:08] Rank:None, Eval at Step [101/103] , FPS 265.4, pred_seen_psnr: 35.89 | 
+[2025/06/17 12:25:08] Rank:None, Eval at Step [103/103] , FPS 265.5, pred_seen_psnr: 35.83 | 
+[2025/06/17 12:25:08] Rank:None, Eval at Step [1/103] , FPS 185.7, quant_seen_psnr: 37.65 | 
+[2025/06/17 12:25:08] Rank:None, Eval at Step [51/103] , FPS 265.8, quant_seen_psnr: 35.59 | 
+[2025/06/17 12:25:09] Rank:None, Eval at Step [101/103] , FPS 267.3, quant_seen_psnr: 35.79 | 
+[2025/06/17 12:25:09] Rank:None, Eval at Step [103/103] , FPS 267.3, quant_seen_psnr: 35.82 | 
+Eval at epoch 30 for (720, 360): pred_seen_psnr: 35.83 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 35.82 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:25:10] Rank:None, Epoch[31/300], Step [1/103], lr:1.00e-03 pred_PSNR: 38.16
+[2025/06/17 12:25:10] Rank:None, Epoch[31/300], Step [51/103], lr:1.00e-03 pred_PSNR: 36.14
+[2025/06/17 12:25:11] Rank:None, Epoch[31/300], Step [101/103], lr:1.00e-03 pred_PSNR: 36.17
+[2025/06/17 12:25:11] Rank:None, Epoch[31/300], Step [103/103], lr:1.00e-03 pred_PSNR: 36.2
+[2025/06/17 12:25:11] Rank:None, Epoch[32/300], Step [1/103], lr:1.00e-03 pred_PSNR: 35.64
+[2025/06/17 12:25:12] Rank:None, Epoch[32/300], Step [51/103], lr:1.00e-03 pred_PSNR: 35.58
+[2025/06/17 12:25:13] Rank:None, Epoch[32/300], Step [101/103], lr:1.00e-03 pred_PSNR: 35.65
+[2025/06/17 12:25:13] Rank:None, Epoch[32/300], Step [103/103], lr:1.00e-03 pred_PSNR: 35.72
+[2025/06/17 12:25:13] Rank:None, Epoch[33/300], Step [1/103], lr:1.00e-03 pred_PSNR: 31.61
+[2025/06/17 12:25:14] Rank:None, Epoch[33/300], Step [51/103], lr:1.00e-03 pred_PSNR: 34.47
+[2025/06/17 12:25:15] Rank:None, Epoch[33/300], Step [101/103], lr:1.00e-03 pred_PSNR: 34.65
+[2025/06/17 12:25:15] Rank:None, Epoch[33/300], Step [103/103], lr:1.00e-03 pred_PSNR: 34.71
+[2025/06/17 12:25:15] Rank:None, Epoch[34/300], Step [1/103], lr:1.00e-03 pred_PSNR: 36.91
+[2025/06/17 12:25:16] Rank:None, Epoch[34/300], Step [51/103], lr:1.00e-03 pred_PSNR: 35.85
+[2025/06/17 12:25:17] Rank:None, Epoch[34/300], Step [101/103], lr:9.99e-04 pred_PSNR: 35.84
+[2025/06/17 12:25:17] Rank:None, Epoch[34/300], Step [103/103], lr:9.99e-04 pred_PSNR: 35.86
+[2025/06/17 12:25:17] Rank:None, Epoch[35/300], Step [1/103], lr:9.99e-04 pred_PSNR: 38.13
+[2025/06/17 12:25:18] Rank:None, Epoch[35/300], Step [51/103], lr:9.99e-04 pred_PSNR: 36.6
+[2025/06/17 12:25:18] Rank:None, Epoch[35/300], Step [101/103], lr:9.99e-04 pred_PSNR: 36.76
+[2025/06/17 12:25:18] Rank:None, Epoch[35/300], Step [103/103], lr:9.99e-04 pred_PSNR: 36.78
+[2025/06/17 12:25:19] Rank:None, Epoch[36/300], Step [1/103], lr:9.99e-04 pred_PSNR: 32.28
+[2025/06/17 12:25:20] Rank:None, Epoch[36/300], Step [51/103], lr:9.99e-04 pred_PSNR: 36.5
+[2025/06/17 12:25:20] Rank:None, Epoch[36/300], Step [101/103], lr:9.99e-04 pred_PSNR: 36.52
+[2025/06/17 12:25:20] Rank:None, Epoch[36/300], Step [103/103], lr:9.99e-04 pred_PSNR: 36.6
+[2025/06/17 12:25:21] Rank:None, Epoch[37/300], Step [1/103], lr:9.99e-04 pred_PSNR: 38.23
+[2025/06/17 12:25:21] Rank:None, Epoch[37/300], Step [51/103], lr:9.99e-04 pred_PSNR: 35.5
+[2025/06/17 12:25:22] Rank:None, Epoch[37/300], Step [101/103], lr:9.98e-04 pred_PSNR: 35.98
+[2025/06/17 12:25:22] Rank:None, Epoch[37/300], Step [103/103], lr:9.98e-04 pred_PSNR: 35.97
+[2025/06/17 12:25:23] Rank:None, Epoch[38/300], Step [1/103], lr:9.98e-04 pred_PSNR: 41.94
+[2025/06/17 12:25:23] Rank:None, Epoch[38/300], Step [51/103], lr:9.98e-04 pred_PSNR: 37.77
+[2025/06/17 12:25:24] Rank:None, Epoch[38/300], Step [101/103], lr:9.98e-04 pred_PSNR: 37.49
+[2025/06/17 12:25:24] Rank:None, Epoch[38/300], Step [103/103], lr:9.98e-04 pred_PSNR: 37.5
+[2025/06/17 12:25:24] Rank:None, Epoch[39/300], Step [1/103], lr:9.98e-04 pred_PSNR: 40.73
+[2025/06/17 12:25:25] Rank:None, Epoch[39/300], Step [51/103], lr:9.98e-04 pred_PSNR: 37.89
+[2025/06/17 12:25:26] Rank:None, Epoch[39/300], Step [101/103], lr:9.97e-04 pred_PSNR: 38.02
+[2025/06/17 12:25:26] Rank:None, Epoch[39/300], Step [103/103], lr:9.97e-04 pred_PSNR: 38.04
+[2025/06/17 12:25:26] Rank:None, Epoch[40/300], Step [1/103], lr:9.97e-04 pred_PSNR: 41.34
+[2025/06/17 12:25:27] Rank:None, Epoch[40/300], Step [51/103], lr:9.97e-04 pred_PSNR: 37.21
+[2025/06/17 12:25:28] Rank:None, Epoch[40/300], Step [101/103], lr:9.97e-04 pred_PSNR: 37.54
+[2025/06/17 12:25:28] Rank:None, Epoch[40/300], Step [103/103], lr:9.97e-04 pred_PSNR: 37.48
+[2025/06/17 12:25:28] Rank:None, Epoch[41/300], Step [1/103], lr:9.97e-04 pred_PSNR: 36.68
+[2025/06/17 12:25:29] Rank:None, Epoch[41/300], Step [51/103], lr:9.96e-04 pred_PSNR: 36.01
+[2025/06/17 12:25:30] Rank:None, Epoch[41/300], Step [101/103], lr:9.96e-04 pred_PSNR: 37.35
+[2025/06/17 12:25:30] Rank:None, Epoch[41/300], Step [103/103], lr:9.96e-04 pred_PSNR: 37.34
+[2025/06/17 12:25:30] Rank:None, Epoch[42/300], Step [1/103], lr:9.96e-04 pred_PSNR: 40.29
+[2025/06/17 12:25:31] Rank:None, Epoch[42/300], Step [51/103], lr:9.96e-04 pred_PSNR: 38.52
+[2025/06/17 12:25:31] Rank:None, Epoch[42/300], Step [101/103], lr:9.95e-04 pred_PSNR: 38.28
+[2025/06/17 12:25:31] Rank:None, Epoch[42/300], Step [103/103], lr:9.95e-04 pred_PSNR: 38.26
+[2025/06/17 12:25:32] Rank:None, Epoch[43/300], Step [1/103], lr:9.95e-04 pred_PSNR: 31.29
+[2025/06/17 12:25:33] Rank:None, Epoch[43/300], Step [51/103], lr:9.95e-04 pred_PSNR: 38.19
+[2025/06/17 12:25:33] Rank:None, Epoch[43/300], Step [101/103], lr:9.94e-04 pred_PSNR: 38.71
+[2025/06/17 12:25:33] Rank:None, Epoch[43/300], Step [103/103], lr:9.94e-04 pred_PSNR: 38.72
+[2025/06/17 12:25:34] Rank:None, Epoch[44/300], Step [1/103], lr:9.94e-04 pred_PSNR: 40.17
+[2025/06/17 12:25:34] Rank:None, Epoch[44/300], Step [51/103], lr:9.94e-04 pred_PSNR: 39.65
+[2025/06/17 12:25:35] Rank:None, Epoch[44/300], Step [101/103], lr:9.93e-04 pred_PSNR: 39.19
+[2025/06/17 12:25:35] Rank:None, Epoch[44/300], Step [103/103], lr:9.93e-04 pred_PSNR: 39.18
+[2025/06/17 12:25:36] Rank:None, Epoch[45/300], Step [1/103], lr:9.93e-04 pred_PSNR: 35.78
+[2025/06/17 12:25:36] Rank:None, Epoch[45/300], Step [51/103], lr:9.93e-04 pred_PSNR: 38.65
+[2025/06/17 12:25:37] Rank:None, Epoch[45/300], Step [101/103], lr:9.92e-04 pred_PSNR: 38.57
+[2025/06/17 12:25:37] Rank:None, Epoch[45/300], Step [103/103], lr:9.92e-04 pred_PSNR: 38.62
+[2025/06/17 12:25:38] Rank:None, Epoch[46/300], Step [1/103], lr:9.92e-04 pred_PSNR: 42.93
+[2025/06/17 12:25:38] Rank:None, Epoch[46/300], Step [51/103], lr:9.92e-04 pred_PSNR: 38.54
+[2025/06/17 12:25:39] Rank:None, Epoch[46/300], Step [101/103], lr:9.91e-04 pred_PSNR: 39.01
+[2025/06/17 12:25:39] Rank:None, Epoch[46/300], Step [103/103], lr:9.91e-04 pred_PSNR: 38.96
+[2025/06/17 12:25:39] Rank:None, Epoch[47/300], Step [1/103], lr:9.91e-04 pred_PSNR: 40.7
+[2025/06/17 12:25:40] Rank:None, Epoch[47/300], Step [51/103], lr:9.91e-04 pred_PSNR: 38.27
+[2025/06/17 12:25:41] Rank:None, Epoch[47/300], Step [101/103], lr:9.90e-04 pred_PSNR: 38.33
+[2025/06/17 12:25:41] Rank:None, Epoch[47/300], Step [103/103], lr:9.90e-04 pred_PSNR: 38.38
+[2025/06/17 12:25:41] Rank:None, Epoch[48/300], Step [1/103], lr:9.90e-04 pred_PSNR: 39.88
+[2025/06/17 12:25:42] Rank:None, Epoch[48/300], Step [51/103], lr:9.90e-04 pred_PSNR: 38.79
+[2025/06/17 12:25:43] Rank:None, Epoch[48/300], Step [101/103], lr:9.89e-04 pred_PSNR: 38.82
+[2025/06/17 12:25:43] Rank:None, Epoch[48/300], Step [103/103], lr:9.89e-04 pred_PSNR: 38.88
+[2025/06/17 12:25:43] Rank:None, Epoch[49/300], Step [1/103], lr:9.89e-04 pred_PSNR: 34.52
+[2025/06/17 12:25:44] Rank:None, Epoch[49/300], Step [51/103], lr:9.88e-04 pred_PSNR: 38.27
+[2025/06/17 12:25:44] Rank:None, Epoch[49/300], Step [101/103], lr:9.88e-04 pred_PSNR: 38.34
+[2025/06/17 12:25:44] Rank:None, Epoch[49/300], Step [103/103], lr:9.88e-04 pred_PSNR: 38.41
+[2025/06/17 12:25:45] Rank:None, Epoch[50/300], Step [1/103], lr:9.88e-04 pred_PSNR: 42.4
+[2025/06/17 12:25:46] Rank:None, Epoch[50/300], Step [51/103], lr:9.87e-04 pred_PSNR: 39.37
+[2025/06/17 12:25:46] Rank:None, Epoch[50/300], Step [101/103], lr:9.87e-04 pred_PSNR: 38.76
+[2025/06/17 12:25:46] Rank:None, Epoch[50/300], Step [103/103], lr:9.87e-04 pred_PSNR: 38.73
+[2025/06/17 12:25:47] Rank:None, Epoch[51/300], Step [1/103], lr:9.87e-04 pred_PSNR: 34.53
+[2025/06/17 12:25:47] Rank:None, Epoch[51/300], Step [51/103], lr:9.86e-04 pred_PSNR: 37.41
+[2025/06/17 12:25:48] Rank:None, Epoch[51/300], Step [101/103], lr:9.85e-04 pred_PSNR: 38.32
+[2025/06/17 12:25:48] Rank:None, Epoch[51/300], Step [103/103], lr:9.85e-04 pred_PSNR: 38.41
+[2025/06/17 12:25:49] Rank:None, Epoch[52/300], Step [1/103], lr:9.85e-04 pred_PSNR: 41.43
+[2025/06/17 12:25:49] Rank:None, Epoch[52/300], Step [51/103], lr:9.84e-04 pred_PSNR: 39.41
+[2025/06/17 12:25:50] Rank:None, Epoch[52/300], Step [101/103], lr:9.84e-04 pred_PSNR: 38.09
+[2025/06/17 12:25:50] Rank:None, Epoch[52/300], Step [103/103], lr:9.84e-04 pred_PSNR: 38.15
+[2025/06/17 12:25:50] Rank:None, Epoch[53/300], Step [1/103], lr:9.84e-04 pred_PSNR: 37.82
+[2025/06/17 12:25:51] Rank:None, Epoch[53/300], Step [51/103], lr:9.83e-04 pred_PSNR: 39.16
+[2025/06/17 12:25:52] Rank:None, Epoch[53/300], Step [101/103], lr:9.82e-04 pred_PSNR: 39.31
+[2025/06/17 12:25:52] Rank:None, Epoch[53/300], Step [103/103], lr:9.82e-04 pred_PSNR: 39.34
+[2025/06/17 12:25:52] Rank:None, Epoch[54/300], Step [1/103], lr:9.82e-04 pred_PSNR: 34.83
+[2025/06/17 12:25:53] Rank:None, Epoch[54/300], Step [51/103], lr:9.81e-04 pred_PSNR: 39.43
+[2025/06/17 12:25:54] Rank:None, Epoch[54/300], Step [101/103], lr:9.81e-04 pred_PSNR: 39.55
+[2025/06/17 12:25:54] Rank:None, Epoch[54/300], Step [103/103], lr:9.81e-04 pred_PSNR: 39.44
+[2025/06/17 12:25:54] Rank:None, Epoch[55/300], Step [1/103], lr:9.81e-04 pred_PSNR: 40.07
+[2025/06/17 12:25:55] Rank:None, Epoch[55/300], Step [51/103], lr:9.80e-04 pred_PSNR: 39.5
+[2025/06/17 12:25:55] Rank:None, Epoch[55/300], Step [101/103], lr:9.79e-04 pred_PSNR: 39.57
+[2025/06/17 12:25:55] Rank:None, Epoch[55/300], Step [103/103], lr:9.79e-04 pred_PSNR: 39.56
+[2025/06/17 12:25:56] Rank:None, Epoch[56/300], Step [1/103], lr:9.79e-04 pred_PSNR: 42.3
+[2025/06/17 12:25:57] Rank:None, Epoch[56/300], Step [51/103], lr:9.78e-04 pred_PSNR: 39.77
+[2025/06/17 12:25:57] Rank:None, Epoch[56/300], Step [101/103], lr:9.77e-04 pred_PSNR: 39.22
+[2025/06/17 12:25:57] Rank:None, Epoch[56/300], Step [103/103], lr:9.77e-04 pred_PSNR: 39.18
+[2025/06/17 12:25:58] Rank:None, Epoch[57/300], Step [1/103], lr:9.77e-04 pred_PSNR: 38.78
+[2025/06/17 12:25:58] Rank:None, Epoch[57/300], Step [51/103], lr:9.76e-04 pred_PSNR: 39.38
+[2025/06/17 12:25:59] Rank:None, Epoch[57/300], Step [101/103], lr:9.76e-04 pred_PSNR: 39.39
+[2025/06/17 12:25:59] Rank:None, Epoch[57/300], Step [103/103], lr:9.76e-04 pred_PSNR: 39.32
+[2025/06/17 12:26:00] Rank:None, Epoch[58/300], Step [1/103], lr:9.76e-04 pred_PSNR: 33.32
+[2025/06/17 12:26:00] Rank:None, Epoch[58/300], Step [51/103], lr:9.75e-04 pred_PSNR: 40.23
+[2025/06/17 12:26:01] Rank:None, Epoch[58/300], Step [101/103], lr:9.74e-04 pred_PSNR: 40.12
+[2025/06/17 12:26:01] Rank:None, Epoch[58/300], Step [103/103], lr:9.74e-04 pred_PSNR: 40.08
+[2025/06/17 12:26:02] Rank:None, Epoch[59/300], Step [1/103], lr:9.74e-04 pred_PSNR: 42.71
+[2025/06/17 12:26:02] Rank:None, Epoch[59/300], Step [51/103], lr:9.73e-04 pred_PSNR: 40.28
+[2025/06/17 12:26:03] Rank:None, Epoch[59/300], Step [101/103], lr:9.72e-04 pred_PSNR: 40.62
+[2025/06/17 12:26:03] Rank:None, Epoch[59/300], Step [103/103], lr:9.72e-04 pred_PSNR: 40.66
+[2025/06/17 12:26:03] Rank:None, Epoch[60/300], Step [1/103], lr:9.72e-04 pred_PSNR: 40.5
+[2025/06/17 12:26:04] Rank:None, Epoch[60/300], Step [51/103], lr:9.71e-04 pred_PSNR: 40.42
+[2025/06/17 12:26:05] Rank:None, Epoch[60/300], Step [101/103], lr:9.70e-04 pred_PSNR: 40.4
+[2025/06/17 12:26:05] Rank:None, Epoch[60/300], Step [103/103], lr:9.70e-04 pred_PSNR: 40.4
+[2025/06/17 12:26:05] Rank:None, Eval at Step [1/103] , FPS 176.3, pred_seen_psnr: 43.94 | 
+[2025/06/17 12:26:05] Rank:None, Eval at Step [51/103] , FPS 263.1, pred_seen_psnr: 41.7 | 
+[2025/06/17 12:26:06] Rank:None, Eval at Step [101/103] , FPS 264.7, pred_seen_psnr: 41.2 | 
+[2025/06/17 12:26:06] Rank:None, Eval at Step [103/103] , FPS 264.8, pred_seen_psnr: 41.23 | 
+[2025/06/17 12:26:06] Rank:None, Eval at Step [1/103] , FPS 180.7, quant_seen_psnr: 41.91 | 
+[2025/06/17 12:26:06] Rank:None, Eval at Step [51/103] , FPS 264.8, quant_seen_psnr: 41.42 | 
+[2025/06/17 12:26:07] Rank:None, Eval at Step [101/103] , FPS 265.9, quant_seen_psnr: 41.26 | 
+[2025/06/17 12:26:07] Rank:None, Eval at Step [103/103] , FPS 266.0, quant_seen_psnr: 41.19 | 
+Eval at epoch 60 for (720, 360): pred_seen_psnr: 41.23 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 41.19 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:26:07] Rank:None, Epoch[61/300], Step [1/103], lr:9.70e-04 pred_PSNR: 41.48
+[2025/06/17 12:26:08] Rank:None, Epoch[61/300], Step [51/103], lr:9.69e-04 pred_PSNR: 40.53
+[2025/06/17 12:26:09] Rank:None, Epoch[61/300], Step [101/103], lr:9.68e-04 pred_PSNR: 40.01
+[2025/06/17 12:26:09] Rank:None, Epoch[61/300], Step [103/103], lr:9.68e-04 pred_PSNR: 39.97
+[2025/06/17 12:26:09] Rank:None, Epoch[62/300], Step [1/103], lr:9.68e-04 pred_PSNR: 39.16
+[2025/06/17 12:26:10] Rank:None, Epoch[62/300], Step [51/103], lr:9.67e-04 pred_PSNR: 39.24
+[2025/06/17 12:26:11] Rank:None, Epoch[62/300], Step [101/103], lr:9.66e-04 pred_PSNR: 39.69
+[2025/06/17 12:26:11] Rank:None, Epoch[62/300], Step [103/103], lr:9.66e-04 pred_PSNR: 39.68
+[2025/06/17 12:26:11] Rank:None, Epoch[63/300], Step [1/103], lr:9.66e-04 pred_PSNR: 34.93
+[2025/06/17 12:26:12] Rank:None, Epoch[63/300], Step [51/103], lr:9.65e-04 pred_PSNR: 40.91
+[2025/06/17 12:26:13] Rank:None, Epoch[63/300], Step [101/103], lr:9.64e-04 pred_PSNR: 40.59
+[2025/06/17 12:26:13] Rank:None, Epoch[63/300], Step [103/103], lr:9.64e-04 pred_PSNR: 40.6
+[2025/06/17 12:26:13] Rank:None, Epoch[64/300], Step [1/103], lr:9.64e-04 pred_PSNR: 43.68
+[2025/06/17 12:26:14] Rank:None, Epoch[64/300], Step [51/103], lr:9.63e-04 pred_PSNR: 41.1
+[2025/06/17 12:26:14] Rank:None, Epoch[64/300], Step [101/103], lr:9.61e-04 pred_PSNR: 40.93
+[2025/06/17 12:26:14] Rank:None, Epoch[64/300], Step [103/103], lr:9.61e-04 pred_PSNR: 40.95
+[2025/06/17 12:26:15] Rank:None, Epoch[65/300], Step [1/103], lr:9.61e-04 pred_PSNR: 34.62
+[2025/06/17 12:26:16] Rank:None, Epoch[65/300], Step [51/103], lr:9.60e-04 pred_PSNR: 40.58
+[2025/06/17 12:26:16] Rank:None, Epoch[65/300], Step [101/103], lr:9.59e-04 pred_PSNR: 40.79
+[2025/06/17 12:26:16] Rank:None, Epoch[65/300], Step [103/103], lr:9.59e-04 pred_PSNR: 40.79
+[2025/06/17 12:26:17] Rank:None, Epoch[66/300], Step [1/103], lr:9.59e-04 pred_PSNR: 43.24
+[2025/06/17 12:26:18] Rank:None, Epoch[66/300], Step [51/103], lr:9.58e-04 pred_PSNR: 40.26
+[2025/06/17 12:26:18] Rank:None, Epoch[66/300], Step [101/103], lr:9.57e-04 pred_PSNR: 40.4
+[2025/06/17 12:26:18] Rank:None, Epoch[66/300], Step [103/103], lr:9.57e-04 pred_PSNR: 40.4
+[2025/06/17 12:26:19] Rank:None, Epoch[67/300], Step [1/103], lr:9.57e-04 pred_PSNR: 39.82
+[2025/06/17 12:26:19] Rank:None, Epoch[67/300], Step [51/103], lr:9.56e-04 pred_PSNR: 41.41
+[2025/06/17 12:26:20] Rank:None, Epoch[67/300], Step [101/103], lr:9.54e-04 pred_PSNR: 41.5
+[2025/06/17 12:26:20] Rank:None, Epoch[67/300], Step [103/103], lr:9.54e-04 pred_PSNR: 41.51
+[2025/06/17 12:26:21] Rank:None, Epoch[68/300], Step [1/103], lr:9.54e-04 pred_PSNR: 42.78
+[2025/06/17 12:26:21] Rank:None, Epoch[68/300], Step [51/103], lr:9.53e-04 pred_PSNR: 41.19
+[2025/06/17 12:26:22] Rank:None, Epoch[68/300], Step [101/103], lr:9.52e-04 pred_PSNR: 40.76
+[2025/06/17 12:26:22] Rank:None, Epoch[68/300], Step [103/103], lr:9.52e-04 pred_PSNR: 40.77
+[2025/06/17 12:26:22] Rank:None, Epoch[69/300], Step [1/103], lr:9.52e-04 pred_PSNR: 44.78
+[2025/06/17 12:26:23] Rank:None, Epoch[69/300], Step [51/103], lr:9.51e-04 pred_PSNR: 41.79
+[2025/06/17 12:26:24] Rank:None, Epoch[69/300], Step [101/103], lr:9.49e-04 pred_PSNR: 41.25
+[2025/06/17 12:26:24] Rank:None, Epoch[69/300], Step [103/103], lr:9.49e-04 pred_PSNR: 41.25
+[2025/06/17 12:26:24] Rank:None, Epoch[70/300], Step [1/103], lr:9.49e-04 pred_PSNR: 41.44
+[2025/06/17 12:26:25] Rank:None, Epoch[70/300], Step [51/103], lr:9.48e-04 pred_PSNR: 40.5
+[2025/06/17 12:26:26] Rank:None, Epoch[70/300], Step [101/103], lr:9.47e-04 pred_PSNR: 40.88
+[2025/06/17 12:26:26] Rank:None, Epoch[70/300], Step [103/103], lr:9.47e-04 pred_PSNR: 40.91
+[2025/06/17 12:26:26] Rank:None, Epoch[71/300], Step [1/103], lr:9.47e-04 pred_PSNR: 40.33
+[2025/06/17 12:26:27] Rank:None, Epoch[71/300], Step [51/103], lr:9.46e-04 pred_PSNR: 40.79
+[2025/06/17 12:26:28] Rank:None, Epoch[71/300], Step [101/103], lr:9.44e-04 pred_PSNR: 40.98
+[2025/06/17 12:26:28] Rank:None, Epoch[71/300], Step [103/103], lr:9.44e-04 pred_PSNR: 40.96
+[2025/06/17 12:26:28] Rank:None, Epoch[72/300], Step [1/103], lr:9.44e-04 pred_PSNR: 43.85
+[2025/06/17 12:26:29] Rank:None, Epoch[72/300], Step [51/103], lr:9.43e-04 pred_PSNR: 41.3
+[2025/06/17 12:26:29] Rank:None, Epoch[72/300], Step [101/103], lr:9.42e-04 pred_PSNR: 40.86
+[2025/06/17 12:26:29] Rank:None, Epoch[72/300], Step [103/103], lr:9.42e-04 pred_PSNR: 40.84
+[2025/06/17 12:26:30] Rank:None, Epoch[73/300], Step [1/103], lr:9.41e-04 pred_PSNR: 39.96
+[2025/06/17 12:26:30] Rank:None, Epoch[73/300], Step [51/103], lr:9.40e-04 pred_PSNR: 41.09
+[2025/06/17 12:26:31] Rank:None, Epoch[73/300], Step [101/103], lr:9.39e-04 pred_PSNR: 40.82
+[2025/06/17 12:26:31] Rank:None, Epoch[73/300], Step [103/103], lr:9.39e-04 pred_PSNR: 40.75
+[2025/06/17 12:26:32] Rank:None, Epoch[74/300], Step [1/103], lr:9.39e-04 pred_PSNR: 45.39
+[2025/06/17 12:26:32] Rank:None, Epoch[74/300], Step [51/103], lr:9.37e-04 pred_PSNR: 41.67
+[2025/06/17 12:26:33] Rank:None, Epoch[74/300], Step [101/103], lr:9.36e-04 pred_PSNR: 41.7
+[2025/06/17 12:26:33] Rank:None, Epoch[74/300], Step [103/103], lr:9.36e-04 pred_PSNR: 41.76
+[2025/06/17 12:26:34] Rank:None, Epoch[75/300], Step [1/103], lr:9.36e-04 pred_PSNR: 43.41
+[2025/06/17 12:26:34] Rank:None, Epoch[75/300], Step [51/103], lr:9.35e-04 pred_PSNR: 40.13
+[2025/06/17 12:26:35] Rank:None, Epoch[75/300], Step [101/103], lr:9.33e-04 pred_PSNR: 41.07
+[2025/06/17 12:26:35] Rank:None, Epoch[75/300], Step [103/103], lr:9.33e-04 pred_PSNR: 41.07
+[2025/06/17 12:26:35] Rank:None, Epoch[76/300], Step [1/103], lr:9.33e-04 pred_PSNR: 41.3
+[2025/06/17 12:26:36] Rank:None, Epoch[76/300], Step [51/103], lr:9.32e-04 pred_PSNR: 41.28
+[2025/06/17 12:26:37] Rank:None, Epoch[76/300], Step [101/103], lr:9.30e-04 pred_PSNR: 41.66
+[2025/06/17 12:26:37] Rank:None, Epoch[76/300], Step [103/103], lr:9.30e-04 pred_PSNR: 41.64
+[2025/06/17 12:26:37] Rank:None, Epoch[77/300], Step [1/103], lr:9.30e-04 pred_PSNR: 41.34
+[2025/06/17 12:26:38] Rank:None, Epoch[77/300], Step [51/103], lr:9.29e-04 pred_PSNR: 41.2
+[2025/06/17 12:26:39] Rank:None, Epoch[77/300], Step [101/103], lr:9.27e-04 pred_PSNR: 40.69
+[2025/06/17 12:26:39] Rank:None, Epoch[77/300], Step [103/103], lr:9.27e-04 pred_PSNR: 40.69
+[2025/06/17 12:26:39] Rank:None, Epoch[78/300], Step [1/103], lr:9.27e-04 pred_PSNR: 41.04
+[2025/06/17 12:26:40] Rank:None, Epoch[78/300], Step [51/103], lr:9.26e-04 pred_PSNR: 41.72
+[2025/06/17 12:26:40] Rank:None, Epoch[78/300], Step [101/103], lr:9.24e-04 pred_PSNR: 41.8
+[2025/06/17 12:26:40] Rank:None, Epoch[78/300], Step [103/103], lr:9.24e-04 pred_PSNR: 41.79
+[2025/06/17 12:26:41] Rank:None, Epoch[79/300], Step [1/103], lr:9.24e-04 pred_PSNR: 44.27
+[2025/06/17 12:26:42] Rank:None, Epoch[79/300], Step [51/103], lr:9.23e-04 pred_PSNR: 41.16
+[2025/06/17 12:26:42] Rank:None, Epoch[79/300], Step [101/103], lr:9.21e-04 pred_PSNR: 41.13
+[2025/06/17 12:26:42] Rank:None, Epoch[79/300], Step [103/103], lr:9.21e-04 pred_PSNR: 41.17
+[2025/06/17 12:26:43] Rank:None, Epoch[80/300], Step [1/103], lr:9.21e-04 pred_PSNR: 33.42
+[2025/06/17 12:26:44] Rank:None, Epoch[80/300], Step [51/103], lr:9.19e-04 pred_PSNR: 41.46
+[2025/06/17 12:26:44] Rank:None, Epoch[80/300], Step [101/103], lr:9.18e-04 pred_PSNR: 41.5
+[2025/06/17 12:26:44] Rank:None, Epoch[80/300], Step [103/103], lr:9.18e-04 pred_PSNR: 41.55
+[2025/06/17 12:26:45] Rank:None, Epoch[81/300], Step [1/103], lr:9.18e-04 pred_PSNR: 43.41
+[2025/06/17 12:26:45] Rank:None, Epoch[81/300], Step [51/103], lr:9.16e-04 pred_PSNR: 42.48
+[2025/06/17 12:26:46] Rank:None, Epoch[81/300], Step [101/103], lr:9.15e-04 pred_PSNR: 41.87
+[2025/06/17 12:26:46] Rank:None, Epoch[81/300], Step [103/103], lr:9.15e-04 pred_PSNR: 41.8
+[2025/06/17 12:26:47] Rank:None, Epoch[82/300], Step [1/103], lr:9.15e-04 pred_PSNR: 42.32
+[2025/06/17 12:26:47] Rank:None, Epoch[82/300], Step [51/103], lr:9.13e-04 pred_PSNR: 41.34
+[2025/06/17 12:26:48] Rank:None, Epoch[82/300], Step [101/103], lr:9.11e-04 pred_PSNR: 40.83
+[2025/06/17 12:26:48] Rank:None, Epoch[82/300], Step [103/103], lr:9.11e-04 pred_PSNR: 40.87
+[2025/06/17 12:26:48] Rank:None, Epoch[83/300], Step [1/103], lr:9.11e-04 pred_PSNR: 44.52
+[2025/06/17 12:26:49] Rank:None, Epoch[83/300], Step [51/103], lr:9.10e-04 pred_PSNR: 42.25
+[2025/06/17 12:26:50] Rank:None, Epoch[83/300], Step [101/103], lr:9.08e-04 pred_PSNR: 41.99
+[2025/06/17 12:26:50] Rank:None, Epoch[83/300], Step [103/103], lr:9.08e-04 pred_PSNR: 42.01
+[2025/06/17 12:26:50] Rank:None, Epoch[84/300], Step [1/103], lr:9.08e-04 pred_PSNR: 36.89
+[2025/06/17 12:26:51] Rank:None, Epoch[84/300], Step [51/103], lr:9.06e-04 pred_PSNR: 41.2
+[2025/06/17 12:26:52] Rank:None, Epoch[84/300], Step [101/103], lr:9.05e-04 pred_PSNR: 41.3
+[2025/06/17 12:26:52] Rank:None, Epoch[84/300], Step [103/103], lr:9.05e-04 pred_PSNR: 41.37
+[2025/06/17 12:26:52] Rank:None, Epoch[85/300], Step [1/103], lr:9.05e-04 pred_PSNR: 39.18
+[2025/06/17 12:26:53] Rank:None, Epoch[85/300], Step [51/103], lr:9.03e-04 pred_PSNR: 42.4
+[2025/06/17 12:26:54] Rank:None, Epoch[85/300], Step [101/103], lr:9.01e-04 pred_PSNR: 42.08
+[2025/06/17 12:26:54] Rank:None, Epoch[85/300], Step [103/103], lr:9.01e-04 pred_PSNR: 42.02
+[2025/06/17 12:26:54] Rank:None, Epoch[86/300], Step [1/103], lr:9.01e-04 pred_PSNR: 42.79
+[2025/06/17 12:26:55] Rank:None, Epoch[86/300], Step [51/103], lr:8.99e-04 pred_PSNR: 42.51
+[2025/06/17 12:26:55] Rank:None, Epoch[86/300], Step [101/103], lr:8.98e-04 pred_PSNR: 42.12
+[2025/06/17 12:26:55] Rank:None, Epoch[86/300], Step [103/103], lr:8.98e-04 pred_PSNR: 42.15
+[2025/06/17 12:26:56] Rank:None, Epoch[87/300], Step [1/103], lr:8.98e-04 pred_PSNR: 45.11
+[2025/06/17 12:26:57] Rank:None, Epoch[87/300], Step [51/103], lr:8.96e-04 pred_PSNR: 43.09
+[2025/06/17 12:26:57] Rank:None, Epoch[87/300], Step [101/103], lr:8.94e-04 pred_PSNR: 42.3
+[2025/06/17 12:26:57] Rank:None, Epoch[87/300], Step [103/103], lr:8.94e-04 pred_PSNR: 42.25
+[2025/06/17 12:26:58] Rank:None, Epoch[88/300], Step [1/103], lr:8.94e-04 pred_PSNR: 41.48
+[2025/06/17 12:26:59] Rank:None, Epoch[88/300], Step [51/103], lr:8.92e-04 pred_PSNR: 42.47
+[2025/06/17 12:26:59] Rank:None, Epoch[88/300], Step [101/103], lr:8.91e-04 pred_PSNR: 42.19
+[2025/06/17 12:26:59] Rank:None, Epoch[88/300], Step [103/103], lr:8.90e-04 pred_PSNR: 42.14
+[2025/06/17 12:27:00] Rank:None, Epoch[89/300], Step [1/103], lr:8.90e-04 pred_PSNR: 44.44
+[2025/06/17 12:27:00] Rank:None, Epoch[89/300], Step [51/103], lr:8.89e-04 pred_PSNR: 42.96
+[2025/06/17 12:27:01] Rank:None, Epoch[89/300], Step [101/103], lr:8.87e-04 pred_PSNR: 42.5
+[2025/06/17 12:27:01] Rank:None, Epoch[89/300], Step [103/103], lr:8.87e-04 pred_PSNR: 42.46
+[2025/06/17 12:27:02] Rank:None, Epoch[90/300], Step [1/103], lr:8.87e-04 pred_PSNR: 44.25
+[2025/06/17 12:27:02] Rank:None, Epoch[90/300], Step [51/103], lr:8.85e-04 pred_PSNR: 41.67
+[2025/06/17 12:27:03] Rank:None, Epoch[90/300], Step [101/103], lr:8.83e-04 pred_PSNR: 42.21
+[2025/06/17 12:27:03] Rank:None, Epoch[90/300], Step [103/103], lr:8.83e-04 pred_PSNR: 42.17
+[2025/06/17 12:27:03] Rank:None, Eval at Step [1/103] , FPS 171.3, pred_seen_psnr: 42.86 | 
+[2025/06/17 12:27:04] Rank:None, Eval at Step [51/103] , FPS 262.2, pred_seen_psnr: 39.96 | 
+[2025/06/17 12:27:04] Rank:None, Eval at Step [101/103] , FPS 264.9, pred_seen_psnr: 39.94 | 
+[2025/06/17 12:27:04] Rank:None, Eval at Step [103/103] , FPS 265.0, pred_seen_psnr: 39.93 | 
+[2025/06/17 12:27:04] Rank:None, Eval at Step [1/103] , FPS 189.0, quant_seen_psnr: 41.26 | 
+[2025/06/17 12:27:05] Rank:None, Eval at Step [51/103] , FPS 264.6, quant_seen_psnr: 40.05 | 
+[2025/06/17 12:27:05] Rank:None, Eval at Step [101/103] , FPS 266.3, quant_seen_psnr: 39.97 | 
+[2025/06/17 12:27:05] Rank:None, Eval at Step [103/103] , FPS 266.4, quant_seen_psnr: 39.92 | 
+Eval at epoch 90 for (720, 360): pred_seen_psnr: 39.93 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 39.92 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:27:06] Rank:None, Epoch[91/300], Step [1/103], lr:8.83e-04 pred_PSNR: 42.92
+[2025/06/17 12:27:06] Rank:None, Epoch[91/300], Step [51/103], lr:8.81e-04 pred_PSNR: 41.48
+[2025/06/17 12:27:07] Rank:None, Epoch[91/300], Step [101/103], lr:8.79e-04 pred_PSNR: 42.26
+[2025/06/17 12:27:07] Rank:None, Epoch[91/300], Step [103/103], lr:8.79e-04 pred_PSNR: 42.26
+[2025/06/17 12:27:07] Rank:None, Epoch[92/300], Step [1/103], lr:8.79e-04 pred_PSNR: 47.93
+[2025/06/17 12:27:08] Rank:None, Epoch[92/300], Step [51/103], lr:8.77e-04 pred_PSNR: 41.89
+[2025/06/17 12:27:09] Rank:None, Epoch[92/300], Step [101/103], lr:8.76e-04 pred_PSNR: 42.16
+[2025/06/17 12:27:09] Rank:None, Epoch[92/300], Step [103/103], lr:8.75e-04 pred_PSNR: 42.11
+[2025/06/17 12:27:09] Rank:None, Epoch[93/300], Step [1/103], lr:8.75e-04 pred_PSNR: 44.56
+[2025/06/17 12:27:10] Rank:None, Epoch[93/300], Step [51/103], lr:8.74e-04 pred_PSNR: 41.43
+[2025/06/17 12:27:11] Rank:None, Epoch[93/300], Step [101/103], lr:8.72e-04 pred_PSNR: 41.66
+[2025/06/17 12:27:11] Rank:None, Epoch[93/300], Step [103/103], lr:8.72e-04 pred_PSNR: 41.69
+[2025/06/17 12:27:11] Rank:None, Epoch[94/300], Step [1/103], lr:8.72e-04 pred_PSNR: 46.03
+[2025/06/17 12:27:12] Rank:None, Epoch[94/300], Step [51/103], lr:8.70e-04 pred_PSNR: 42.77
+[2025/06/17 12:27:12] Rank:None, Epoch[94/300], Step [101/103], lr:8.68e-04 pred_PSNR: 42.41
+[2025/06/17 12:27:12] Rank:None, Epoch[94/300], Step [103/103], lr:8.68e-04 pred_PSNR: 42.49
+[2025/06/17 12:27:13] Rank:None, Epoch[95/300], Step [1/103], lr:8.68e-04 pred_PSNR: 45.08
+[2025/06/17 12:27:14] Rank:None, Epoch[95/300], Step [51/103], lr:8.66e-04 pred_PSNR: 42.0
+[2025/06/17 12:27:14] Rank:None, Epoch[95/300], Step [101/103], lr:8.64e-04 pred_PSNR: 41.77
+[2025/06/17 12:27:14] Rank:None, Epoch[95/300], Step [103/103], lr:8.64e-04 pred_PSNR: 41.82
+[2025/06/17 12:27:15] Rank:None, Epoch[96/300], Step [1/103], lr:8.64e-04 pred_PSNR: 46.84
+[2025/06/17 12:27:15] Rank:None, Epoch[96/300], Step [51/103], lr:8.62e-04 pred_PSNR: 42.82
+[2025/06/17 12:27:16] Rank:None, Epoch[96/300], Step [101/103], lr:8.60e-04 pred_PSNR: 42.82
+[2025/06/17 12:27:16] Rank:None, Epoch[96/300], Step [103/103], lr:8.60e-04 pred_PSNR: 42.84
+[2025/06/17 12:27:17] Rank:None, Epoch[97/300], Step [1/103], lr:8.60e-04 pred_PSNR: 40.59
+[2025/06/17 12:27:17] Rank:None, Epoch[97/300], Step [51/103], lr:8.58e-04 pred_PSNR: 42.49
+[2025/06/17 12:27:18] Rank:None, Epoch[97/300], Step [101/103], lr:8.56e-04 pred_PSNR: 42.22
+[2025/06/17 12:27:18] Rank:None, Epoch[97/300], Step [103/103], lr:8.56e-04 pred_PSNR: 42.19
+[2025/06/17 12:27:18] Rank:None, Epoch[98/300], Step [1/103], lr:8.56e-04 pred_PSNR: 42.5
+[2025/06/17 12:27:19] Rank:None, Epoch[98/300], Step [51/103], lr:8.54e-04 pred_PSNR: 42.47
+[2025/06/17 12:27:20] Rank:None, Epoch[98/300], Step [101/103], lr:8.52e-04 pred_PSNR: 42.2
+[2025/06/17 12:27:20] Rank:None, Epoch[98/300], Step [103/103], lr:8.52e-04 pred_PSNR: 42.28
+[2025/06/17 12:27:20] Rank:None, Epoch[99/300], Step [1/103], lr:8.51e-04 pred_PSNR: 44.9
+[2025/06/17 12:27:21] Rank:None, Epoch[99/300], Step [51/103], lr:8.49e-04 pred_PSNR: 43.17
+[2025/06/17 12:27:22] Rank:None, Epoch[99/300], Step [101/103], lr:8.47e-04 pred_PSNR: 43.03
+[2025/06/17 12:27:22] Rank:None, Epoch[99/300], Step [103/103], lr:8.47e-04 pred_PSNR: 43.06
+[2025/06/17 12:27:22] Rank:None, Epoch[100/300], Step [1/103], lr:8.47e-04 pred_PSNR: 32.55
+[2025/06/17 12:27:23] Rank:None, Epoch[100/300], Step [51/103], lr:8.45e-04 pred_PSNR: 42.16
+[2025/06/17 12:27:24] Rank:None, Epoch[100/300], Step [101/103], lr:8.43e-04 pred_PSNR: 42.92
+[2025/06/17 12:27:24] Rank:None, Epoch[100/300], Step [103/103], lr:8.43e-04 pred_PSNR: 42.9
+[2025/06/17 12:27:24] Rank:None, Epoch[101/300], Step [1/103], lr:8.43e-04 pred_PSNR: 42.49
+[2025/06/17 12:27:25] Rank:None, Epoch[101/300], Step [51/103], lr:8.41e-04 pred_PSNR: 42.83
+[2025/06/17 12:27:25] Rank:None, Epoch[101/300], Step [101/103], lr:8.39e-04 pred_PSNR: 43.13
+[2025/06/17 12:27:25] Rank:None, Epoch[101/300], Step [103/103], lr:8.39e-04 pred_PSNR: 43.15
+[2025/06/17 12:27:26] Rank:None, Epoch[102/300], Step [1/103], lr:8.39e-04 pred_PSNR: 41.55
+[2025/06/17 12:27:27] Rank:None, Epoch[102/300], Step [51/103], lr:8.37e-04 pred_PSNR: 41.94
+[2025/06/17 12:27:27] Rank:None, Epoch[102/300], Step [101/103], lr:8.35e-04 pred_PSNR: 42.68
+[2025/06/17 12:27:27] Rank:None, Epoch[102/300], Step [103/103], lr:8.35e-04 pred_PSNR: 42.72
+[2025/06/17 12:27:28] Rank:None, Epoch[103/300], Step [1/103], lr:8.35e-04 pred_PSNR: 47.73
+[2025/06/17 12:27:28] Rank:None, Epoch[103/300], Step [51/103], lr:8.32e-04 pred_PSNR: 43.17
+[2025/06/17 12:27:29] Rank:None, Epoch[103/300], Step [101/103], lr:8.30e-04 pred_PSNR: 42.78
+[2025/06/17 12:27:29] Rank:None, Epoch[103/300], Step [103/103], lr:8.30e-04 pred_PSNR: 42.82
+[2025/06/17 12:27:30] Rank:None, Epoch[104/300], Step [1/103], lr:8.30e-04 pred_PSNR: 42.68
+[2025/06/17 12:27:30] Rank:None, Epoch[104/300], Step [51/103], lr:8.28e-04 pred_PSNR: 42.48
+[2025/06/17 12:27:31] Rank:None, Epoch[104/300], Step [101/103], lr:8.26e-04 pred_PSNR: 42.2
+[2025/06/17 12:27:31] Rank:None, Epoch[104/300], Step [103/103], lr:8.26e-04 pred_PSNR: 42.22
+[2025/06/17 12:27:32] Rank:None, Epoch[105/300], Step [1/103], lr:8.26e-04 pred_PSNR: 41.57
+[2025/06/17 12:27:32] Rank:None, Epoch[105/300], Step [51/103], lr:8.24e-04 pred_PSNR: 42.78
+[2025/06/17 12:27:33] Rank:None, Epoch[105/300], Step [101/103], lr:8.22e-04 pred_PSNR: 42.94
+[2025/06/17 12:27:33] Rank:None, Epoch[105/300], Step [103/103], lr:8.21e-04 pred_PSNR: 42.91
+[2025/06/17 12:27:33] Rank:None, Epoch[106/300], Step [1/103], lr:8.21e-04 pred_PSNR: 34.46
+[2025/06/17 12:27:34] Rank:None, Epoch[106/300], Step [51/103], lr:8.19e-04 pred_PSNR: 42.53
+[2025/06/17 12:27:35] Rank:None, Epoch[106/300], Step [101/103], lr:8.17e-04 pred_PSNR: 42.97
+[2025/06/17 12:27:35] Rank:None, Epoch[106/300], Step [103/103], lr:8.17e-04 pred_PSNR: 42.93
+[2025/06/17 12:27:35] Rank:None, Epoch[107/300], Step [1/103], lr:8.17e-04 pred_PSNR: 43.51
+[2025/06/17 12:27:36] Rank:None, Epoch[107/300], Step [51/103], lr:8.15e-04 pred_PSNR: 42.86
+[2025/06/17 12:27:37] Rank:None, Epoch[107/300], Step [101/103], lr:8.13e-04 pred_PSNR: 43.68
+[2025/06/17 12:27:37] Rank:None, Epoch[107/300], Step [103/103], lr:8.12e-04 pred_PSNR: 43.58
+[2025/06/17 12:27:37] Rank:None, Epoch[108/300], Step [1/103], lr:8.12e-04 pred_PSNR: 39.19
+[2025/06/17 12:27:38] Rank:None, Epoch[108/300], Step [51/103], lr:8.10e-04 pred_PSNR: 42.21
+[2025/06/17 12:27:38] Rank:None, Epoch[108/300], Step [101/103], lr:8.08e-04 pred_PSNR: 43.04
+[2025/06/17 12:27:38] Rank:None, Epoch[108/300], Step [103/103], lr:8.08e-04 pred_PSNR: 43.05
+[2025/06/17 12:27:39] Rank:None, Epoch[109/300], Step [1/103], lr:8.08e-04 pred_PSNR: 45.37
+[2025/06/17 12:27:40] Rank:None, Epoch[109/300], Step [51/103], lr:8.06e-04 pred_PSNR: 44.43
+[2025/06/17 12:27:40] Rank:None, Epoch[109/300], Step [101/103], lr:8.03e-04 pred_PSNR: 43.78
+[2025/06/17 12:27:40] Rank:None, Epoch[109/300], Step [103/103], lr:8.03e-04 pred_PSNR: 43.71
+[2025/06/17 12:27:41] Rank:None, Epoch[110/300], Step [1/103], lr:8.03e-04 pred_PSNR: 39.27
+[2025/06/17 12:27:41] Rank:None, Epoch[110/300], Step [51/103], lr:8.01e-04 pred_PSNR: 43.51
+[2025/06/17 12:27:42] Rank:None, Epoch[110/300], Step [101/103], lr:7.99e-04 pred_PSNR: 43.63
+[2025/06/17 12:27:42] Rank:None, Epoch[110/300], Step [103/103], lr:7.99e-04 pred_PSNR: 43.66
+[2025/06/17 12:27:43] Rank:None, Epoch[111/300], Step [1/103], lr:7.99e-04 pred_PSNR: 45.77
+[2025/06/17 12:27:43] Rank:None, Epoch[111/300], Step [51/103], lr:7.96e-04 pred_PSNR: 43.8
+[2025/06/17 12:27:44] Rank:None, Epoch[111/300], Step [101/103], lr:7.94e-04 pred_PSNR: 44.13
+[2025/06/17 12:27:44] Rank:None, Epoch[111/300], Step [103/103], lr:7.94e-04 pred_PSNR: 44.12
+[2025/06/17 12:27:44] Rank:None, Epoch[112/300], Step [1/103], lr:7.94e-04 pred_PSNR: 44.09
+[2025/06/17 12:27:45] Rank:None, Epoch[112/300], Step [51/103], lr:7.92e-04 pred_PSNR: 44.86
+[2025/06/17 12:27:46] Rank:None, Epoch[112/300], Step [101/103], lr:7.89e-04 pred_PSNR: 44.76
+[2025/06/17 12:27:46] Rank:None, Epoch[112/300], Step [103/103], lr:7.89e-04 pred_PSNR: 44.71
+[2025/06/17 12:27:46] Rank:None, Epoch[113/300], Step [1/103], lr:7.89e-04 pred_PSNR: 47.84
+[2025/06/17 12:27:47] Rank:None, Epoch[113/300], Step [51/103], lr:7.87e-04 pred_PSNR: 44.58
+[2025/06/17 12:27:48] Rank:None, Epoch[113/300], Step [101/103], lr:7.85e-04 pred_PSNR: 44.13
+[2025/06/17 12:27:48] Rank:None, Epoch[113/300], Step [103/103], lr:7.84e-04 pred_PSNR: 44.1
+[2025/06/17 12:27:48] Rank:None, Epoch[114/300], Step [1/103], lr:7.84e-04 pred_PSNR: 43.69
+[2025/06/17 12:27:49] Rank:None, Epoch[114/300], Step [51/103], lr:7.82e-04 pred_PSNR: 43.18
+[2025/06/17 12:27:50] Rank:None, Epoch[114/300], Step [101/103], lr:7.80e-04 pred_PSNR: 43.37
+[2025/06/17 12:27:50] Rank:None, Epoch[114/300], Step [103/103], lr:7.80e-04 pred_PSNR: 43.37
+[2025/06/17 12:27:50] Rank:None, Epoch[115/300], Step [1/103], lr:7.80e-04 pred_PSNR: 43.55
+[2025/06/17 12:27:51] Rank:None, Epoch[115/300], Step [51/103], lr:7.77e-04 pred_PSNR: 42.44
+[2025/06/17 12:27:51] Rank:None, Epoch[115/300], Step [101/103], lr:7.75e-04 pred_PSNR: 43.2
+[2025/06/17 12:27:52] Rank:None, Epoch[115/300], Step [103/103], lr:7.75e-04 pred_PSNR: 43.24
+[2025/06/17 12:27:52] Rank:None, Epoch[116/300], Step [1/103], lr:7.75e-04 pred_PSNR: 45.87
+[2025/06/17 12:27:53] Rank:None, Epoch[116/300], Step [51/103], lr:7.72e-04 pred_PSNR: 44.1
+[2025/06/17 12:27:54] Rank:None, Epoch[116/300], Step [101/103], lr:7.70e-04 pred_PSNR: 44.39
+[2025/06/17 12:27:54] Rank:None, Epoch[116/300], Step [103/103], lr:7.70e-04 pred_PSNR: 44.43
+[2025/06/17 12:27:54] Rank:None, Epoch[117/300], Step [1/103], lr:7.70e-04 pred_PSNR: 48.9
+[2025/06/17 12:27:55] Rank:None, Epoch[117/300], Step [51/103], lr:7.67e-04 pred_PSNR: 44.39
+[2025/06/17 12:27:55] Rank:None, Epoch[117/300], Step [101/103], lr:7.65e-04 pred_PSNR: 43.98
+[2025/06/17 12:27:55] Rank:None, Epoch[117/300], Step [103/103], lr:7.65e-04 pred_PSNR: 43.99
+[2025/06/17 12:27:56] Rank:None, Epoch[118/300], Step [1/103], lr:7.65e-04 pred_PSNR: 46.0
+[2025/06/17 12:27:57] Rank:None, Epoch[118/300], Step [51/103], lr:7.63e-04 pred_PSNR: 44.29
+[2025/06/17 12:27:57] Rank:None, Epoch[118/300], Step [101/103], lr:7.60e-04 pred_PSNR: 44.39
+[2025/06/17 12:27:57] Rank:None, Epoch[118/300], Step [103/103], lr:7.60e-04 pred_PSNR: 44.45
+[2025/06/17 12:27:58] Rank:None, Epoch[119/300], Step [1/103], lr:7.60e-04 pred_PSNR: 39.15
+[2025/06/17 12:27:58] Rank:None, Epoch[119/300], Step [51/103], lr:7.58e-04 pred_PSNR: 43.9
+[2025/06/17 12:27:59] Rank:None, Epoch[119/300], Step [101/103], lr:7.55e-04 pred_PSNR: 43.71
+[2025/06/17 12:27:59] Rank:None, Epoch[119/300], Step [103/103], lr:7.55e-04 pred_PSNR: 43.76
+[2025/06/17 12:28:00] Rank:None, Epoch[120/300], Step [1/103], lr:7.55e-04 pred_PSNR: 46.47
+[2025/06/17 12:28:00] Rank:None, Epoch[120/300], Step [51/103], lr:7.53e-04 pred_PSNR: 44.19
+[2025/06/17 12:28:01] Rank:None, Epoch[120/300], Step [101/103], lr:7.50e-04 pred_PSNR: 44.07
+[2025/06/17 12:28:01] Rank:None, Epoch[120/300], Step [103/103], lr:7.50e-04 pred_PSNR: 44.09
+[2025/06/17 12:28:01] Rank:None, Eval at Step [1/103] , FPS 154.2, pred_seen_psnr: 44.06 | 
+[2025/06/17 12:28:02] Rank:None, Eval at Step [51/103] , FPS 261.3, pred_seen_psnr: 42.42 | 
+[2025/06/17 12:28:02] Rank:None, Eval at Step [101/103] , FPS 263.8, pred_seen_psnr: 42.64 | 
+[2025/06/17 12:28:02] Rank:None, Eval at Step [103/103] , FPS 263.9, pred_seen_psnr: 42.64 | 
+[2025/06/17 12:28:02] Rank:None, Eval at Step [1/103] , FPS 196.9, quant_seen_psnr: 44.85 | 
+[2025/06/17 12:28:03] Rank:None, Eval at Step [51/103] , FPS 264.1, quant_seen_psnr: 42.51 | 
+[2025/06/17 12:28:03] Rank:None, Eval at Step [101/103] , FPS 266.5, quant_seen_psnr: 42.66 | 
+[2025/06/17 12:28:03] Rank:None, Eval at Step [103/103] , FPS 266.5, quant_seen_psnr: 42.66 | 
+Eval at epoch 120 for (720, 360): pred_seen_psnr: 42.64 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 42.66 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:28:04] Rank:None, Epoch[121/300], Step [1/103], lr:7.50e-04 pred_PSNR: 36.94
+[2025/06/17 12:28:04] Rank:None, Epoch[121/300], Step [51/103], lr:7.48e-04 pred_PSNR: 43.95
+[2025/06/17 12:28:05] Rank:None, Epoch[121/300], Step [101/103], lr:7.45e-04 pred_PSNR: 44.31
+[2025/06/17 12:28:05] Rank:None, Epoch[121/300], Step [103/103], lr:7.45e-04 pred_PSNR: 44.33
+[2025/06/17 12:28:06] Rank:None, Epoch[122/300], Step [1/103], lr:7.45e-04 pred_PSNR: 45.28
+[2025/06/17 12:28:06] Rank:None, Epoch[122/300], Step [51/103], lr:7.42e-04 pred_PSNR: 44.17
+[2025/06/17 12:28:07] Rank:None, Epoch[122/300], Step [101/103], lr:7.40e-04 pred_PSNR: 44.16
+[2025/06/17 12:28:07] Rank:None, Epoch[122/300], Step [103/103], lr:7.40e-04 pred_PSNR: 44.05
+[2025/06/17 12:28:07] Rank:None, Epoch[123/300], Step [1/103], lr:7.40e-04 pred_PSNR: 45.4
+[2025/06/17 12:28:08] Rank:None, Epoch[123/300], Step [51/103], lr:7.37e-04 pred_PSNR: 44.69
+[2025/06/17 12:28:09] Rank:None, Epoch[123/300], Step [101/103], lr:7.35e-04 pred_PSNR: 44.52
+[2025/06/17 12:28:09] Rank:None, Epoch[123/300], Step [103/103], lr:7.35e-04 pred_PSNR: 44.53
+[2025/06/17 12:28:09] Rank:None, Epoch[124/300], Step [1/103], lr:7.35e-04 pred_PSNR: 49.05
+[2025/06/17 12:28:10] Rank:None, Epoch[124/300], Step [51/103], lr:7.32e-04 pred_PSNR: 44.4
+[2025/06/17 12:28:11] Rank:None, Epoch[124/300], Step [101/103], lr:7.30e-04 pred_PSNR: 44.55
+[2025/06/17 12:28:11] Rank:None, Epoch[124/300], Step [103/103], lr:7.30e-04 pred_PSNR: 44.52
+[2025/06/17 12:28:11] Rank:None, Epoch[125/300], Step [1/103], lr:7.30e-04 pred_PSNR: 43.59
+[2025/06/17 12:28:12] Rank:None, Epoch[125/300], Step [51/103], lr:7.27e-04 pred_PSNR: 43.77
+[2025/06/17 12:28:12] Rank:None, Epoch[125/300], Step [101/103], lr:7.25e-04 pred_PSNR: 44.04
+[2025/06/17 12:28:12] Rank:None, Epoch[125/300], Step [103/103], lr:7.24e-04 pred_PSNR: 43.99
+[2025/06/17 12:28:13] Rank:None, Epoch[126/300], Step [1/103], lr:7.24e-04 pred_PSNR: 46.34
+[2025/06/17 12:28:14] Rank:None, Epoch[126/300], Step [51/103], lr:7.22e-04 pred_PSNR: 44.72
+[2025/06/17 12:28:14] Rank:None, Epoch[126/300], Step [101/103], lr:7.19e-04 pred_PSNR: 44.46
+[2025/06/17 12:28:14] Rank:None, Epoch[126/300], Step [103/103], lr:7.19e-04 pred_PSNR: 44.5
+[2025/06/17 12:28:15] Rank:None, Epoch[127/300], Step [1/103], lr:7.19e-04 pred_PSNR: 45.22
+[2025/06/17 12:28:15] Rank:None, Epoch[127/300], Step [51/103], lr:7.17e-04 pred_PSNR: 43.65
+[2025/06/17 12:28:16] Rank:None, Epoch[127/300], Step [101/103], lr:7.14e-04 pred_PSNR: 44.15
+[2025/06/17 12:28:16] Rank:None, Epoch[127/300], Step [103/103], lr:7.14e-04 pred_PSNR: 44.24
+[2025/06/17 12:28:17] Rank:None, Epoch[128/300], Step [1/103], lr:7.14e-04 pred_PSNR: 46.55
+[2025/06/17 12:28:17] Rank:None, Epoch[128/300], Step [51/103], lr:7.11e-04 pred_PSNR: 45.66
+[2025/06/17 12:28:18] Rank:None, Epoch[128/300], Step [101/103], lr:7.09e-04 pred_PSNR: 45.08
+[2025/06/17 12:28:18] Rank:None, Epoch[128/300], Step [103/103], lr:7.09e-04 pred_PSNR: 45.07
+[2025/06/17 12:28:19] Rank:None, Epoch[129/300], Step [1/103], lr:7.09e-04 pred_PSNR: 48.18
+[2025/06/17 12:28:19] Rank:None, Epoch[129/300], Step [51/103], lr:7.06e-04 pred_PSNR: 45.11
+[2025/06/17 12:28:20] Rank:None, Epoch[129/300], Step [101/103], lr:7.04e-04 pred_PSNR: 44.96
+[2025/06/17 12:28:20] Rank:None, Epoch[129/300], Step [103/103], lr:7.03e-04 pred_PSNR: 44.98
+[2025/06/17 12:28:20] Rank:None, Epoch[130/300], Step [1/103], lr:7.03e-04 pred_PSNR: 45.59
+[2025/06/17 12:28:21] Rank:None, Epoch[130/300], Step [51/103], lr:7.01e-04 pred_PSNR: 43.92
+[2025/06/17 12:28:22] Rank:None, Epoch[130/300], Step [101/103], lr:6.98e-04 pred_PSNR: 43.68
+[2025/06/17 12:28:22] Rank:None, Epoch[130/300], Step [103/103], lr:6.98e-04 pred_PSNR: 43.68
+[2025/06/17 12:28:22] Rank:None, Epoch[131/300], Step [1/103], lr:6.98e-04 pred_PSNR: 42.63
+[2025/06/17 12:28:23] Rank:None, Epoch[131/300], Step [51/103], lr:6.95e-04 pred_PSNR: 44.71
+[2025/06/17 12:28:24] Rank:None, Epoch[131/300], Step [101/103], lr:6.93e-04 pred_PSNR: 44.69
+[2025/06/17 12:28:24] Rank:None, Epoch[131/300], Step [103/103], lr:6.93e-04 pred_PSNR: 44.63
+[2025/06/17 12:28:24] Rank:None, Epoch[132/300], Step [1/103], lr:6.93e-04 pred_PSNR: 44.11
+[2025/06/17 12:28:25] Rank:None, Epoch[132/300], Step [51/103], lr:6.90e-04 pred_PSNR: 44.26
+[2025/06/17 12:28:26] Rank:None, Epoch[132/300], Step [101/103], lr:6.87e-04 pred_PSNR: 44.66
+[2025/06/17 12:28:26] Rank:None, Epoch[132/300], Step [103/103], lr:6.87e-04 pred_PSNR: 44.73
+[2025/06/17 12:28:26] Rank:None, Epoch[133/300], Step [1/103], lr:6.87e-04 pred_PSNR: 45.95
+[2025/06/17 12:28:27] Rank:None, Epoch[133/300], Step [51/103], lr:6.85e-04 pred_PSNR: 45.78
+[2025/06/17 12:28:27] Rank:None, Epoch[133/300], Step [101/103], lr:6.82e-04 pred_PSNR: 45.14
+[2025/06/17 12:28:27] Rank:None, Epoch[133/300], Step [103/103], lr:6.82e-04 pred_PSNR: 45.12
+[2025/06/17 12:28:28] Rank:None, Epoch[134/300], Step [1/103], lr:6.82e-04 pred_PSNR: 44.21
+[2025/06/17 12:28:29] Rank:None, Epoch[134/300], Step [51/103], lr:6.79e-04 pred_PSNR: 42.54
+[2025/06/17 12:28:29] Rank:None, Epoch[134/300], Step [101/103], lr:6.77e-04 pred_PSNR: 43.45
+[2025/06/17 12:28:29] Rank:None, Epoch[134/300], Step [103/103], lr:6.77e-04 pred_PSNR: 43.44
+[2025/06/17 12:28:30] Rank:None, Epoch[135/300], Step [1/103], lr:6.76e-04 pred_PSNR: 39.49
+[2025/06/17 12:28:31] Rank:None, Epoch[135/300], Step [51/103], lr:6.74e-04 pred_PSNR: 43.73
+[2025/06/17 12:28:31] Rank:None, Epoch[135/300], Step [101/103], lr:6.71e-04 pred_PSNR: 44.14
+[2025/06/17 12:28:31] Rank:None, Epoch[135/300], Step [103/103], lr:6.71e-04 pred_PSNR: 44.15
+[2025/06/17 12:28:32] Rank:None, Epoch[136/300], Step [1/103], lr:6.71e-04 pred_PSNR: 47.77
+[2025/06/17 12:28:32] Rank:None, Epoch[136/300], Step [51/103], lr:6.68e-04 pred_PSNR: 43.75
+[2025/06/17 12:28:33] Rank:None, Epoch[136/300], Step [101/103], lr:6.66e-04 pred_PSNR: 44.78
+[2025/06/17 12:28:33] Rank:None, Epoch[136/300], Step [103/103], lr:6.66e-04 pred_PSNR: 44.78
+[2025/06/17 12:28:34] Rank:None, Epoch[137/300], Step [1/103], lr:6.66e-04 pred_PSNR: 37.68
+[2025/06/17 12:28:34] Rank:None, Epoch[137/300], Step [51/103], lr:6.63e-04 pred_PSNR: 43.76
+[2025/06/17 12:28:35] Rank:None, Epoch[137/300], Step [101/103], lr:6.60e-04 pred_PSNR: 44.23
+[2025/06/17 12:28:35] Rank:None, Epoch[137/300], Step [103/103], lr:6.60e-04 pred_PSNR: 44.31
+[2025/06/17 12:28:35] Rank:None, Epoch[138/300], Step [1/103], lr:6.60e-04 pred_PSNR: 45.05
+[2025/06/17 12:28:36] Rank:None, Epoch[138/300], Step [51/103], lr:6.57e-04 pred_PSNR: 45.15
+[2025/06/17 12:28:37] Rank:None, Epoch[138/300], Step [101/103], lr:6.55e-04 pred_PSNR: 45.41
+[2025/06/17 12:28:37] Rank:None, Epoch[138/300], Step [103/103], lr:6.55e-04 pred_PSNR: 45.45
+[2025/06/17 12:28:37] Rank:None, Epoch[139/300], Step [1/103], lr:6.55e-04 pred_PSNR: 49.05
+[2025/06/17 12:28:38] Rank:None, Epoch[139/300], Step [51/103], lr:6.52e-04 pred_PSNR: 45.08
+[2025/06/17 12:28:39] Rank:None, Epoch[139/300], Step [101/103], lr:6.49e-04 pred_PSNR: 44.95
+[2025/06/17 12:28:39] Rank:None, Epoch[139/300], Step [103/103], lr:6.49e-04 pred_PSNR: 44.94
+[2025/06/17 12:28:39] Rank:None, Epoch[140/300], Step [1/103], lr:6.49e-04 pred_PSNR: 38.5
+[2025/06/17 12:28:40] Rank:None, Epoch[140/300], Step [51/103], lr:6.46e-04 pred_PSNR: 44.28
+[2025/06/17 12:28:40] Rank:None, Epoch[140/300], Step [101/103], lr:6.44e-04 pred_PSNR: 45.19
+[2025/06/17 12:28:40] Rank:None, Epoch[140/300], Step [103/103], lr:6.43e-04 pred_PSNR: 45.17
+[2025/06/17 12:28:41] Rank:None, Epoch[141/300], Step [1/103], lr:6.43e-04 pred_PSNR: 48.52
+[2025/06/17 12:28:42] Rank:None, Epoch[141/300], Step [51/103], lr:6.41e-04 pred_PSNR: 45.65
+[2025/06/17 12:28:42] Rank:None, Epoch[141/300], Step [101/103], lr:6.38e-04 pred_PSNR: 45.54
+[2025/06/17 12:28:42] Rank:None, Epoch[141/300], Step [103/103], lr:6.38e-04 pred_PSNR: 45.54
+[2025/06/17 12:28:43] Rank:None, Epoch[142/300], Step [1/103], lr:6.38e-04 pred_PSNR: 32.55
+[2025/06/17 12:28:44] Rank:None, Epoch[142/300], Step [51/103], lr:6.35e-04 pred_PSNR: 44.8
+[2025/06/17 12:28:44] Rank:None, Epoch[142/300], Step [101/103], lr:6.32e-04 pred_PSNR: 45.42
+[2025/06/17 12:28:44] Rank:None, Epoch[142/300], Step [103/103], lr:6.32e-04 pred_PSNR: 45.45
+[2025/06/17 12:28:45] Rank:None, Epoch[143/300], Step [1/103], lr:6.32e-04 pred_PSNR: 50.51
+[2025/06/17 12:28:45] Rank:None, Epoch[143/300], Step [51/103], lr:6.29e-04 pred_PSNR: 46.21
+[2025/06/17 12:28:46] Rank:None, Epoch[143/300], Step [101/103], lr:6.27e-04 pred_PSNR: 45.6
+[2025/06/17 12:28:46] Rank:None, Epoch[143/300], Step [103/103], lr:6.27e-04 pred_PSNR: 45.6
+[2025/06/17 12:28:47] Rank:None, Epoch[144/300], Step [1/103], lr:6.27e-04 pred_PSNR: 39.93
+[2025/06/17 12:28:47] Rank:None, Epoch[144/300], Step [51/103], lr:6.24e-04 pred_PSNR: 45.6
+[2025/06/17 12:28:48] Rank:None, Epoch[144/300], Step [101/103], lr:6.21e-04 pred_PSNR: 45.57
+[2025/06/17 12:28:48] Rank:None, Epoch[144/300], Step [103/103], lr:6.21e-04 pred_PSNR: 45.43
+[2025/06/17 12:28:48] Rank:None, Epoch[145/300], Step [1/103], lr:6.21e-04 pred_PSNR: 44.54
+[2025/06/17 12:28:49] Rank:None, Epoch[145/300], Step [51/103], lr:6.18e-04 pred_PSNR: 45.65
+[2025/06/17 12:28:50] Rank:None, Epoch[145/300], Step [101/103], lr:6.15e-04 pred_PSNR: 45.68
+[2025/06/17 12:28:50] Rank:None, Epoch[145/300], Step [103/103], lr:6.15e-04 pred_PSNR: 45.65
+[2025/06/17 12:28:50] Rank:None, Epoch[146/300], Step [1/103], lr:6.15e-04 pred_PSNR: 44.61
+[2025/06/17 12:28:51] Rank:None, Epoch[146/300], Step [51/103], lr:6.13e-04 pred_PSNR: 45.2
+[2025/06/17 12:28:52] Rank:None, Epoch[146/300], Step [101/103], lr:6.10e-04 pred_PSNR: 45.66
+[2025/06/17 12:28:52] Rank:None, Epoch[146/300], Step [103/103], lr:6.10e-04 pred_PSNR: 45.65
+[2025/06/17 12:28:52] Rank:None, Epoch[147/300], Step [1/103], lr:6.10e-04 pred_PSNR: 42.88
+[2025/06/17 12:28:53] Rank:None, Epoch[147/300], Step [51/103], lr:6.07e-04 pred_PSNR: 46.71
+[2025/06/17 12:28:53] Rank:None, Epoch[147/300], Step [101/103], lr:6.04e-04 pred_PSNR: 45.95
+[2025/06/17 12:28:53] Rank:None, Epoch[147/300], Step [103/103], lr:6.04e-04 pred_PSNR: 45.89
+[2025/06/17 12:28:54] Rank:None, Epoch[148/300], Step [1/103], lr:6.04e-04 pred_PSNR: 49.02
+[2025/06/17 12:28:55] Rank:None, Epoch[148/300], Step [51/103], lr:6.01e-04 pred_PSNR: 45.21
+[2025/06/17 12:28:55] Rank:None, Epoch[148/300], Step [101/103], lr:5.98e-04 pred_PSNR: 44.84
+[2025/06/17 12:28:55] Rank:None, Epoch[148/300], Step [103/103], lr:5.98e-04 pred_PSNR: 44.83
+[2025/06/17 12:28:56] Rank:None, Epoch[149/300], Step [1/103], lr:5.98e-04 pred_PSNR: 45.83
+[2025/06/17 12:28:56] Rank:None, Epoch[149/300], Step [51/103], lr:5.95e-04 pred_PSNR: 44.86
+[2025/06/17 12:28:57] Rank:None, Epoch[149/300], Step [101/103], lr:5.93e-04 pred_PSNR: 45.16
+[2025/06/17 12:28:57] Rank:None, Epoch[149/300], Step [103/103], lr:5.93e-04 pred_PSNR: 45.22
+[2025/06/17 12:28:58] Rank:None, Epoch[150/300], Step [1/103], lr:5.93e-04 pred_PSNR: 41.99
+[2025/06/17 12:28:58] Rank:None, Epoch[150/300], Step [51/103], lr:5.90e-04 pred_PSNR: 46.01
+[2025/06/17 12:28:59] Rank:None, Epoch[150/300], Step [101/103], lr:5.87e-04 pred_PSNR: 46.14
+[2025/06/17 12:28:59] Rank:None, Epoch[150/300], Step [103/103], lr:5.87e-04 pred_PSNR: 46.08
+[2025/06/17 12:28:59] Rank:None, Eval at Step [1/103] , FPS 167.7, pred_seen_psnr: 41.09 | 
+[2025/06/17 12:29:00] Rank:None, Eval at Step [51/103] , FPS 260.0, pred_seen_psnr: 45.42 | 
+[2025/06/17 12:29:00] Rank:None, Eval at Step [101/103] , FPS 263.2, pred_seen_psnr: 45.74 | 
+[2025/06/17 12:29:00] Rank:None, Eval at Step [103/103] , FPS 263.3, pred_seen_psnr: 45.73 | 
+[2025/06/17 12:29:00] Rank:None, Eval at Step [1/103] , FPS 189.8, quant_seen_psnr: 43.67 | 
+[2025/06/17 12:29:01] Rank:None, Eval at Step [51/103] , FPS 264.9, quant_seen_psnr: 46.04 | 
+[2025/06/17 12:29:01] Rank:None, Eval at Step [101/103] , FPS 266.2, quant_seen_psnr: 45.82 | 
+[2025/06/17 12:29:01] Rank:None, Eval at Step [103/103] , FPS 266.3, quant_seen_psnr: 45.78 | 
+Eval at epoch 150 for (720, 360): pred_seen_psnr: 45.73 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 45.78 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:29:02] Rank:None, Epoch[151/300], Step [1/103], lr:5.87e-04 pred_PSNR: 49.31
+[2025/06/17 12:29:02] Rank:None, Epoch[151/300], Step [51/103], lr:5.84e-04 pred_PSNR: 45.69
+[2025/06/17 12:29:03] Rank:None, Epoch[151/300], Step [101/103], lr:5.81e-04 pred_PSNR: 45.26
+[2025/06/17 12:29:03] Rank:None, Epoch[151/300], Step [103/103], lr:5.81e-04 pred_PSNR: 45.29
+[2025/06/17 12:29:04] Rank:None, Epoch[152/300], Step [1/103], lr:5.81e-04 pred_PSNR: 45.15
+[2025/06/17 12:29:04] Rank:None, Epoch[152/300], Step [51/103], lr:5.78e-04 pred_PSNR: 45.83
+[2025/06/17 12:29:05] Rank:None, Epoch[152/300], Step [101/103], lr:5.76e-04 pred_PSNR: 45.95
+[2025/06/17 12:29:05] Rank:None, Epoch[152/300], Step [103/103], lr:5.75e-04 pred_PSNR: 45.98
+[2025/06/17 12:29:06] Rank:None, Epoch[153/300], Step [1/103], lr:5.75e-04 pred_PSNR: 47.85
+[2025/06/17 12:29:06] Rank:None, Epoch[153/300], Step [51/103], lr:5.73e-04 pred_PSNR: 45.05
+[2025/06/17 12:29:07] Rank:None, Epoch[153/300], Step [101/103], lr:5.70e-04 pred_PSNR: 45.08
+[2025/06/17 12:29:07] Rank:None, Epoch[153/300], Step [103/103], lr:5.70e-04 pred_PSNR: 45.1
+[2025/06/17 12:29:07] Rank:None, Epoch[154/300], Step [1/103], lr:5.70e-04 pred_PSNR: 46.95
+[2025/06/17 12:29:08] Rank:None, Epoch[154/300], Step [51/103], lr:5.67e-04 pred_PSNR: 45.77
+[2025/06/17 12:29:09] Rank:None, Epoch[154/300], Step [101/103], lr:5.64e-04 pred_PSNR: 45.48
+[2025/06/17 12:29:09] Rank:None, Epoch[154/300], Step [103/103], lr:5.64e-04 pred_PSNR: 45.49
+[2025/06/17 12:29:09] Rank:None, Epoch[155/300], Step [1/103], lr:5.64e-04 pred_PSNR: 45.67
+[2025/06/17 12:29:10] Rank:None, Epoch[155/300], Step [51/103], lr:5.61e-04 pred_PSNR: 45.9
+[2025/06/17 12:29:10] Rank:None, Epoch[155/300], Step [101/103], lr:5.58e-04 pred_PSNR: 46.0
+[2025/06/17 12:29:11] Rank:None, Epoch[155/300], Step [103/103], lr:5.58e-04 pred_PSNR: 46.03
+[2025/06/17 12:29:11] Rank:None, Epoch[156/300], Step [1/103], lr:5.58e-04 pred_PSNR: 42.56
+[2025/06/17 12:29:12] Rank:None, Epoch[156/300], Step [51/103], lr:5.55e-04 pred_PSNR: 46.23
+[2025/06/17 12:29:12] Rank:None, Epoch[156/300], Step [101/103], lr:5.52e-04 pred_PSNR: 46.26
+[2025/06/17 12:29:12] Rank:None, Epoch[156/300], Step [103/103], lr:5.52e-04 pred_PSNR: 46.3
+[2025/06/17 12:29:13] Rank:None, Epoch[157/300], Step [1/103], lr:5.52e-04 pred_PSNR: 47.33
+[2025/06/17 12:29:13] Rank:None, Epoch[157/300], Step [51/103], lr:5.49e-04 pred_PSNR: 45.14
+[2025/06/17 12:29:14] Rank:None, Epoch[157/300], Step [101/103], lr:5.47e-04 pred_PSNR: 46.03
+[2025/06/17 12:29:14] Rank:None, Epoch[157/300], Step [103/103], lr:5.47e-04 pred_PSNR: 46.04
+[2025/06/17 12:29:15] Rank:None, Epoch[158/300], Step [1/103], lr:5.46e-04 pred_PSNR: 50.62
+[2025/06/17 12:29:15] Rank:None, Epoch[158/300], Step [51/103], lr:5.44e-04 pred_PSNR: 46.17
+[2025/06/17 12:29:16] Rank:None, Epoch[158/300], Step [101/103], lr:5.41e-04 pred_PSNR: 46.78
+[2025/06/17 12:29:16] Rank:None, Epoch[158/300], Step [103/103], lr:5.41e-04 pred_PSNR: 46.72
+[2025/06/17 12:29:17] Rank:None, Epoch[159/300], Step [1/103], lr:5.41e-04 pred_PSNR: 48.96
+[2025/06/17 12:29:17] Rank:None, Epoch[159/300], Step [51/103], lr:5.38e-04 pred_PSNR: 47.06
+[2025/06/17 12:29:18] Rank:None, Epoch[159/300], Step [101/103], lr:5.35e-04 pred_PSNR: 46.29
+[2025/06/17 12:29:18] Rank:None, Epoch[159/300], Step [103/103], lr:5.35e-04 pred_PSNR: 46.23
+[2025/06/17 12:29:18] Rank:None, Epoch[160/300], Step [1/103], lr:5.35e-04 pred_PSNR: 48.19
+[2025/06/17 12:29:19] Rank:None, Epoch[160/300], Step [51/103], lr:5.32e-04 pred_PSNR: 46.03
+[2025/06/17 12:29:20] Rank:None, Epoch[160/300], Step [101/103], lr:5.29e-04 pred_PSNR: 45.49
+[2025/06/17 12:29:20] Rank:None, Epoch[160/300], Step [103/103], lr:5.29e-04 pred_PSNR: 45.46
+[2025/06/17 12:29:20] Rank:None, Epoch[161/300], Step [1/103], lr:5.29e-04 pred_PSNR: 46.38
+[2025/06/17 12:29:21] Rank:None, Epoch[161/300], Step [51/103], lr:5.26e-04 pred_PSNR: 45.45
+[2025/06/17 12:29:22] Rank:None, Epoch[161/300], Step [101/103], lr:5.23e-04 pred_PSNR: 45.76
+[2025/06/17 12:29:22] Rank:None, Epoch[161/300], Step [103/103], lr:5.23e-04 pred_PSNR: 45.83
+[2025/06/17 12:29:22] Rank:None, Epoch[162/300], Step [1/103], lr:5.23e-04 pred_PSNR: 40.99
+[2025/06/17 12:29:23] Rank:None, Epoch[162/300], Step [51/103], lr:5.20e-04 pred_PSNR: 45.36
+[2025/06/17 12:29:23] Rank:None, Epoch[162/300], Step [101/103], lr:5.18e-04 pred_PSNR: 46.22
+[2025/06/17 12:29:23] Rank:None, Epoch[162/300], Step [103/103], lr:5.18e-04 pred_PSNR: 46.14
+[2025/06/17 12:29:24] Rank:None, Epoch[163/300], Step [1/103], lr:5.17e-04 pred_PSNR: 47.7
+[2025/06/17 12:29:25] Rank:None, Epoch[163/300], Step [51/103], lr:5.15e-04 pred_PSNR: 45.97
+[2025/06/17 12:29:25] Rank:None, Epoch[163/300], Step [101/103], lr:5.12e-04 pred_PSNR: 46.39
+[2025/06/17 12:29:25] Rank:None, Epoch[163/300], Step [103/103], lr:5.12e-04 pred_PSNR: 46.34
+[2025/06/17 12:29:26] Rank:None, Epoch[164/300], Step [1/103], lr:5.12e-04 pred_PSNR: 45.61
+[2025/06/17 12:29:26] Rank:None, Epoch[164/300], Step [51/103], lr:5.09e-04 pred_PSNR: 47.02
+[2025/06/17 12:29:27] Rank:None, Epoch[164/300], Step [101/103], lr:5.06e-04 pred_PSNR: 46.97
+[2025/06/17 12:29:27] Rank:None, Epoch[164/300], Step [103/103], lr:5.06e-04 pred_PSNR: 47.03
+[2025/06/17 12:29:28] Rank:None, Epoch[165/300], Step [1/103], lr:5.06e-04 pred_PSNR: 50.68
+[2025/06/17 12:29:28] Rank:None, Epoch[165/300], Step [51/103], lr:5.03e-04 pred_PSNR: 44.86
+[2025/06/17 12:29:29] Rank:None, Epoch[165/300], Step [101/103], lr:5.00e-04 pred_PSNR: 45.43
+[2025/06/17 12:29:29] Rank:None, Epoch[165/300], Step [103/103], lr:5.00e-04 pred_PSNR: 45.32
+[2025/06/17 12:29:30] Rank:None, Epoch[166/300], Step [1/103], lr:5.00e-04 pred_PSNR: 47.69
+[2025/06/17 12:29:30] Rank:None, Epoch[166/300], Step [51/103], lr:4.97e-04 pred_PSNR: 46.17
+[2025/06/17 12:29:31] Rank:None, Epoch[166/300], Step [101/103], lr:4.94e-04 pred_PSNR: 46.46
+[2025/06/17 12:29:31] Rank:None, Epoch[166/300], Step [103/103], lr:4.94e-04 pred_PSNR: 46.49
+[2025/06/17 12:29:31] Rank:None, Epoch[167/300], Step [1/103], lr:4.94e-04 pred_PSNR: 44.55
+[2025/06/17 12:29:32] Rank:None, Epoch[167/300], Step [51/103], lr:4.91e-04 pred_PSNR: 46.75
+[2025/06/17 12:29:33] Rank:None, Epoch[167/300], Step [101/103], lr:4.89e-04 pred_PSNR: 46.91
+[2025/06/17 12:29:33] Rank:None, Epoch[167/300], Step [103/103], lr:4.88e-04 pred_PSNR: 46.97
+[2025/06/17 12:29:33] Rank:None, Epoch[168/300], Step [1/103], lr:4.88e-04 pred_PSNR: 48.37
+[2025/06/17 12:29:34] Rank:None, Epoch[168/300], Step [51/103], lr:4.86e-04 pred_PSNR: 47.97
+[2025/06/17 12:29:35] Rank:None, Epoch[168/300], Step [101/103], lr:4.83e-04 pred_PSNR: 47.27
+[2025/06/17 12:29:35] Rank:None, Epoch[168/300], Step [103/103], lr:4.83e-04 pred_PSNR: 47.26
+[2025/06/17 12:29:35] Rank:None, Epoch[169/300], Step [1/103], lr:4.83e-04 pred_PSNR: 50.59
+[2025/06/17 12:29:36] Rank:None, Epoch[169/300], Step [51/103], lr:4.80e-04 pred_PSNR: 46.46
+[2025/06/17 12:29:36] Rank:None, Epoch[169/300], Step [101/103], lr:4.77e-04 pred_PSNR: 47.07
+[2025/06/17 12:29:36] Rank:None, Epoch[169/300], Step [103/103], lr:4.77e-04 pred_PSNR: 47.11
+[2025/06/17 12:29:37] Rank:None, Epoch[170/300], Step [1/103], lr:4.77e-04 pred_PSNR: 45.4
+[2025/06/17 12:29:38] Rank:None, Epoch[170/300], Step [51/103], lr:4.74e-04 pred_PSNR: 46.54
+[2025/06/17 12:29:38] Rank:None, Epoch[170/300], Step [101/103], lr:4.71e-04 pred_PSNR: 46.83
+[2025/06/17 12:29:38] Rank:None, Epoch[170/300], Step [103/103], lr:4.71e-04 pred_PSNR: 46.82
+[2025/06/17 12:29:39] Rank:None, Epoch[171/300], Step [1/103], lr:4.71e-04 pred_PSNR: 46.81
+[2025/06/17 12:29:40] Rank:None, Epoch[171/300], Step [51/103], lr:4.68e-04 pred_PSNR: 47.0
+[2025/06/17 12:29:40] Rank:None, Epoch[171/300], Step [101/103], lr:4.65e-04 pred_PSNR: 47.29
+[2025/06/17 12:29:40] Rank:None, Epoch[171/300], Step [103/103], lr:4.65e-04 pred_PSNR: 47.29
+[2025/06/17 12:29:41] Rank:None, Epoch[172/300], Step [1/103], lr:4.65e-04 pred_PSNR: 49.88
+[2025/06/17 12:29:42] Rank:None, Epoch[172/300], Step [51/103], lr:4.62e-04 pred_PSNR: 47.35
+[2025/06/17 12:29:42] Rank:None, Epoch[172/300], Step [101/103], lr:4.59e-04 pred_PSNR: 47.19
+[2025/06/17 12:29:42] Rank:None, Epoch[172/300], Step [103/103], lr:4.59e-04 pred_PSNR: 47.03
+[2025/06/17 12:29:43] Rank:None, Epoch[173/300], Step [1/103], lr:4.59e-04 pred_PSNR: 48.69
+[2025/06/17 12:29:43] Rank:None, Epoch[173/300], Step [51/103], lr:4.57e-04 pred_PSNR: 47.23
+[2025/06/17 12:29:44] Rank:None, Epoch[173/300], Step [101/103], lr:4.54e-04 pred_PSNR: 47.72
+[2025/06/17 12:29:44] Rank:None, Epoch[173/300], Step [103/103], lr:4.54e-04 pred_PSNR: 47.56
+[2025/06/17 12:29:45] Rank:None, Epoch[174/300], Step [1/103], lr:4.54e-04 pred_PSNR: 49.94
+[2025/06/17 12:29:45] Rank:None, Epoch[174/300], Step [51/103], lr:4.51e-04 pred_PSNR: 47.87
+[2025/06/17 12:29:46] Rank:None, Epoch[174/300], Step [101/103], lr:4.48e-04 pred_PSNR: 46.82
+[2025/06/17 12:29:46] Rank:None, Epoch[174/300], Step [103/103], lr:4.48e-04 pred_PSNR: 46.82
+[2025/06/17 12:29:47] Rank:None, Epoch[175/300], Step [1/103], lr:4.48e-04 pred_PSNR: 52.11
+[2025/06/17 12:29:47] Rank:None, Epoch[175/300], Step [51/103], lr:4.45e-04 pred_PSNR: 46.93
+[2025/06/17 12:29:48] Rank:None, Epoch[175/300], Step [101/103], lr:4.42e-04 pred_PSNR: 46.6
+[2025/06/17 12:29:48] Rank:None, Epoch[175/300], Step [103/103], lr:4.42e-04 pred_PSNR: 46.63
+[2025/06/17 12:29:48] Rank:None, Epoch[176/300], Step [1/103], lr:4.42e-04 pred_PSNR: 48.21
+[2025/06/17 12:29:49] Rank:None, Epoch[176/300], Step [51/103], lr:4.39e-04 pred_PSNR: 47.37
+[2025/06/17 12:29:50] Rank:None, Epoch[176/300], Step [101/103], lr:4.36e-04 pred_PSNR: 47.29
+[2025/06/17 12:29:50] Rank:None, Epoch[176/300], Step [103/103], lr:4.36e-04 pred_PSNR: 47.33
+[2025/06/17 12:29:51] Rank:None, Epoch[177/300], Step [1/103], lr:4.36e-04 pred_PSNR: 52.35
+[2025/06/17 12:29:51] Rank:None, Epoch[177/300], Step [51/103], lr:4.33e-04 pred_PSNR: 47.82
+[2025/06/17 12:29:52] Rank:None, Epoch[177/300], Step [101/103], lr:4.31e-04 pred_PSNR: 47.59
+[2025/06/17 12:29:52] Rank:None, Epoch[177/300], Step [103/103], lr:4.30e-04 pred_PSNR: 47.56
+[2025/06/17 12:29:52] Rank:None, Epoch[178/300], Step [1/103], lr:4.30e-04 pred_PSNR: 48.15
+[2025/06/17 12:29:53] Rank:None, Epoch[178/300], Step [51/103], lr:4.28e-04 pred_PSNR: 47.74
+[2025/06/17 12:29:54] Rank:None, Epoch[178/300], Step [101/103], lr:4.25e-04 pred_PSNR: 46.8
+[2025/06/17 12:29:54] Rank:None, Epoch[178/300], Step [103/103], lr:4.25e-04 pred_PSNR: 46.83
+[2025/06/17 12:29:54] Rank:None, Epoch[179/300], Step [1/103], lr:4.25e-04 pred_PSNR: 49.6
+[2025/06/17 12:29:55] Rank:None, Epoch[179/300], Step [51/103], lr:4.22e-04 pred_PSNR: 48.15
+[2025/06/17 12:29:56] Rank:None, Epoch[179/300], Step [101/103], lr:4.19e-04 pred_PSNR: 47.62
+[2025/06/17 12:29:56] Rank:None, Epoch[179/300], Step [103/103], lr:4.19e-04 pred_PSNR: 47.6
+[2025/06/17 12:29:56] Rank:None, Epoch[180/300], Step [1/103], lr:4.19e-04 pred_PSNR: 50.9
+[2025/06/17 12:29:57] Rank:None, Epoch[180/300], Step [51/103], lr:4.16e-04 pred_PSNR: 48.06
+[2025/06/17 12:29:58] Rank:None, Epoch[180/300], Step [101/103], lr:4.13e-04 pred_PSNR: 47.57
+[2025/06/17 12:29:58] Rank:None, Epoch[180/300], Step [103/103], lr:4.13e-04 pred_PSNR: 47.55
+[2025/06/17 12:29:58] Rank:None, Eval at Step [1/103] , FPS 160.3, pred_seen_psnr: 50.18 | 
+[2025/06/17 12:29:58] Rank:None, Eval at Step [51/103] , FPS 262.5, pred_seen_psnr: 47.75 | 
+[2025/06/17 12:29:59] Rank:None, Eval at Step [101/103] , FPS 265.1, pred_seen_psnr: 47.89 | 
+[2025/06/17 12:29:59] Rank:None, Eval at Step [103/103] , FPS 265.1, pred_seen_psnr: 47.92 | 
+[2025/06/17 12:29:59] Rank:None, Eval at Step [1/103] , FPS 187.4, quant_seen_psnr: 48.7 | 
+[2025/06/17 12:29:59] Rank:None, Eval at Step [51/103] , FPS 264.7, quant_seen_psnr: 48.47 | 
+[2025/06/17 12:30:00] Rank:None, Eval at Step [101/103] , FPS 266.5, quant_seen_psnr: 47.94 | 
+[2025/06/17 12:30:00] Rank:None, Eval at Step [103/103] , FPS 266.5, quant_seen_psnr: 47.87 | 
+Eval at epoch 180 for (720, 360): pred_seen_psnr: 47.92 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 47.87 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:30:00] Rank:None, Epoch[181/300], Step [1/103], lr:4.13e-04 pred_PSNR: 49.12
+[2025/06/17 12:30:01] Rank:None, Epoch[181/300], Step [51/103], lr:4.10e-04 pred_PSNR: 47.4
+[2025/06/17 12:30:02] Rank:None, Epoch[181/300], Step [101/103], lr:4.08e-04 pred_PSNR: 47.76
+[2025/06/17 12:30:02] Rank:None, Epoch[181/300], Step [103/103], lr:4.08e-04 pred_PSNR: 47.79
+[2025/06/17 12:30:02] Rank:None, Epoch[182/300], Step [1/103], lr:4.07e-04 pred_PSNR: 50.75
+[2025/06/17 12:30:03] Rank:None, Epoch[182/300], Step [51/103], lr:4.05e-04 pred_PSNR: 46.71
+[2025/06/17 12:30:04] Rank:None, Epoch[182/300], Step [101/103], lr:4.02e-04 pred_PSNR: 47.33
+[2025/06/17 12:30:04] Rank:None, Epoch[182/300], Step [103/103], lr:4.02e-04 pred_PSNR: 47.32
+[2025/06/17 12:30:04] Rank:None, Epoch[183/300], Step [1/103], lr:4.02e-04 pred_PSNR: 42.55
+[2025/06/17 12:30:05] Rank:None, Epoch[183/300], Step [51/103], lr:3.99e-04 pred_PSNR: 47.66
+[2025/06/17 12:30:06] Rank:None, Epoch[183/300], Step [101/103], lr:3.96e-04 pred_PSNR: 47.81
+[2025/06/17 12:30:06] Rank:None, Epoch[183/300], Step [103/103], lr:3.96e-04 pred_PSNR: 47.82
+[2025/06/17 12:30:06] Rank:None, Epoch[184/300], Step [1/103], lr:3.96e-04 pred_PSNR: 44.63
+[2025/06/17 12:30:07] Rank:None, Epoch[184/300], Step [51/103], lr:3.93e-04 pred_PSNR: 48.24
+[2025/06/17 12:30:07] Rank:None, Epoch[184/300], Step [101/103], lr:3.91e-04 pred_PSNR: 47.99
+[2025/06/17 12:30:07] Rank:None, Epoch[184/300], Step [103/103], lr:3.90e-04 pred_PSNR: 47.98
+[2025/06/17 12:30:08] Rank:None, Epoch[185/300], Step [1/103], lr:3.90e-04 pred_PSNR: 46.6
+[2025/06/17 12:30:09] Rank:None, Epoch[185/300], Step [51/103], lr:3.88e-04 pred_PSNR: 47.78
+[2025/06/17 12:30:09] Rank:None, Epoch[185/300], Step [101/103], lr:3.85e-04 pred_PSNR: 48.12
+[2025/06/17 12:30:09] Rank:None, Epoch[185/300], Step [103/103], lr:3.85e-04 pred_PSNR: 48.06
+[2025/06/17 12:30:10] Rank:None, Epoch[186/300], Step [1/103], lr:3.85e-04 pred_PSNR: 49.9
+[2025/06/17 12:30:10] Rank:None, Epoch[186/300], Step [51/103], lr:3.82e-04 pred_PSNR: 46.91
+[2025/06/17 12:30:11] Rank:None, Epoch[186/300], Step [101/103], lr:3.79e-04 pred_PSNR: 47.14
+[2025/06/17 12:30:11] Rank:None, Epoch[186/300], Step [103/103], lr:3.79e-04 pred_PSNR: 47.17
+[2025/06/17 12:30:12] Rank:None, Epoch[187/300], Step [1/103], lr:3.79e-04 pred_PSNR: 49.07
+[2025/06/17 12:30:12] Rank:None, Epoch[187/300], Step [51/103], lr:3.76e-04 pred_PSNR: 47.63
+[2025/06/17 12:30:13] Rank:None, Epoch[187/300], Step [101/103], lr:3.74e-04 pred_PSNR: 47.87
+[2025/06/17 12:30:13] Rank:None, Epoch[187/300], Step [103/103], lr:3.73e-04 pred_PSNR: 47.88
+[2025/06/17 12:30:14] Rank:None, Epoch[188/300], Step [1/103], lr:3.73e-04 pred_PSNR: 48.14
+[2025/06/17 12:30:14] Rank:None, Epoch[188/300], Step [51/103], lr:3.71e-04 pred_PSNR: 48.25
+[2025/06/17 12:30:15] Rank:None, Epoch[188/300], Step [101/103], lr:3.68e-04 pred_PSNR: 47.98
+[2025/06/17 12:30:15] Rank:None, Epoch[188/300], Step [103/103], lr:3.68e-04 pred_PSNR: 47.98
+[2025/06/17 12:30:15] Rank:None, Epoch[189/300], Step [1/103], lr:3.68e-04 pred_PSNR: 47.78
+[2025/06/17 12:30:16] Rank:None, Epoch[189/300], Step [51/103], lr:3.65e-04 pred_PSNR: 48.05
+[2025/06/17 12:30:17] Rank:None, Epoch[189/300], Step [101/103], lr:3.62e-04 pred_PSNR: 47.63
+[2025/06/17 12:30:17] Rank:None, Epoch[189/300], Step [103/103], lr:3.62e-04 pred_PSNR: 47.67
+[2025/06/17 12:30:17] Rank:None, Epoch[190/300], Step [1/103], lr:3.62e-04 pred_PSNR: 51.21
+[2025/06/17 12:30:18] Rank:None, Epoch[190/300], Step [51/103], lr:3.59e-04 pred_PSNR: 48.39
+[2025/06/17 12:30:19] Rank:None, Epoch[190/300], Step [101/103], lr:3.57e-04 pred_PSNR: 47.94
+[2025/06/17 12:30:19] Rank:None, Epoch[190/300], Step [103/103], lr:3.57e-04 pred_PSNR: 47.95
+[2025/06/17 12:30:19] Rank:None, Epoch[191/300], Step [1/103], lr:3.57e-04 pred_PSNR: 45.01
+[2025/06/17 12:30:20] Rank:None, Epoch[191/300], Step [51/103], lr:3.54e-04 pred_PSNR: 47.62
+[2025/06/17 12:30:21] Rank:None, Epoch[191/300], Step [101/103], lr:3.51e-04 pred_PSNR: 47.38
+[2025/06/17 12:30:21] Rank:None, Epoch[191/300], Step [103/103], lr:3.51e-04 pred_PSNR: 47.46
+[2025/06/17 12:30:21] Rank:None, Epoch[192/300], Step [1/103], lr:3.51e-04 pred_PSNR: 47.51
+[2025/06/17 12:30:22] Rank:None, Epoch[192/300], Step [51/103], lr:3.48e-04 pred_PSNR: 48.19
+[2025/06/17 12:30:22] Rank:None, Epoch[192/300], Step [101/103], lr:3.46e-04 pred_PSNR: 47.77
+[2025/06/17 12:30:23] Rank:None, Epoch[192/300], Step [103/103], lr:3.46e-04 pred_PSNR: 47.8
+[2025/06/17 12:30:23] Rank:None, Epoch[193/300], Step [1/103], lr:3.45e-04 pred_PSNR: 49.51
+[2025/06/17 12:30:24] Rank:None, Epoch[193/300], Step [51/103], lr:3.43e-04 pred_PSNR: 48.73
+[2025/06/17 12:30:24] Rank:None, Epoch[193/300], Step [101/103], lr:3.40e-04 pred_PSNR: 48.21
+[2025/06/17 12:30:24] Rank:None, Epoch[193/300], Step [103/103], lr:3.40e-04 pred_PSNR: 48.24
+[2025/06/17 12:30:25] Rank:None, Epoch[194/300], Step [1/103], lr:3.40e-04 pred_PSNR: 42.73
+[2025/06/17 12:30:26] Rank:None, Epoch[194/300], Step [51/103], lr:3.37e-04 pred_PSNR: 48.36
+[2025/06/17 12:30:26] Rank:None, Epoch[194/300], Step [101/103], lr:3.35e-04 pred_PSNR: 48.24
+[2025/06/17 12:30:26] Rank:None, Epoch[194/300], Step [103/103], lr:3.35e-04 pred_PSNR: 48.18
+[2025/06/17 12:30:27] Rank:None, Epoch[195/300], Step [1/103], lr:3.34e-04 pred_PSNR: 50.55
+[2025/06/17 12:30:27] Rank:None, Epoch[195/300], Step [51/103], lr:3.32e-04 pred_PSNR: 48.08
+[2025/06/17 12:30:28] Rank:None, Epoch[195/300], Step [101/103], lr:3.29e-04 pred_PSNR: 47.86
+[2025/06/17 12:30:28] Rank:None, Epoch[195/300], Step [103/103], lr:3.29e-04 pred_PSNR: 47.8
+[2025/06/17 12:30:29] Rank:None, Epoch[196/300], Step [1/103], lr:3.29e-04 pred_PSNR: 48.27
+[2025/06/17 12:30:29] Rank:None, Epoch[196/300], Step [51/103], lr:3.26e-04 pred_PSNR: 47.94
+[2025/06/17 12:30:30] Rank:None, Epoch[196/300], Step [101/103], lr:3.24e-04 pred_PSNR: 48.07
+[2025/06/17 12:30:30] Rank:None, Epoch[196/300], Step [103/103], lr:3.24e-04 pred_PSNR: 48.07
+[2025/06/17 12:30:30] Rank:None, Epoch[197/300], Step [1/103], lr:3.24e-04 pred_PSNR: 50.35
+[2025/06/17 12:30:31] Rank:None, Epoch[197/300], Step [51/103], lr:3.21e-04 pred_PSNR: 48.96
+[2025/06/17 12:30:32] Rank:None, Epoch[197/300], Step [101/103], lr:3.18e-04 pred_PSNR: 48.59
+[2025/06/17 12:30:32] Rank:None, Epoch[197/300], Step [103/103], lr:3.18e-04 pred_PSNR: 48.63
+[2025/06/17 12:30:32] Rank:None, Epoch[198/300], Step [1/103], lr:3.18e-04 pred_PSNR: 52.55
+[2025/06/17 12:30:33] Rank:None, Epoch[198/300], Step [51/103], lr:3.15e-04 pred_PSNR: 48.21
+[2025/06/17 12:30:34] Rank:None, Epoch[198/300], Step [101/103], lr:3.13e-04 pred_PSNR: 48.58
+[2025/06/17 12:30:34] Rank:None, Epoch[198/300], Step [103/103], lr:3.13e-04 pred_PSNR: 48.48
+[2025/06/17 12:30:34] Rank:None, Epoch[199/300], Step [1/103], lr:3.13e-04 pred_PSNR: 49.87
+[2025/06/17 12:30:35] Rank:None, Epoch[199/300], Step [51/103], lr:3.10e-04 pred_PSNR: 48.98
+[2025/06/17 12:30:36] Rank:None, Epoch[199/300], Step [101/103], lr:3.07e-04 pred_PSNR: 48.99
+[2025/06/17 12:30:36] Rank:None, Epoch[199/300], Step [103/103], lr:3.07e-04 pred_PSNR: 48.99
+[2025/06/17 12:30:36] Rank:None, Epoch[200/300], Step [1/103], lr:3.07e-04 pred_PSNR: 52.28
+[2025/06/17 12:30:37] Rank:None, Epoch[200/300], Step [51/103], lr:3.05e-04 pred_PSNR: 48.66
+[2025/06/17 12:30:37] Rank:None, Epoch[200/300], Step [101/103], lr:3.02e-04 pred_PSNR: 48.76
+[2025/06/17 12:30:37] Rank:None, Epoch[200/300], Step [103/103], lr:3.02e-04 pred_PSNR: 48.67
+[2025/06/17 12:30:38] Rank:None, Epoch[201/300], Step [1/103], lr:3.02e-04 pred_PSNR: 51.14
+[2025/06/17 12:30:39] Rank:None, Epoch[201/300], Step [51/103], lr:2.99e-04 pred_PSNR: 48.54
+[2025/06/17 12:30:39] Rank:None, Epoch[201/300], Step [101/103], lr:2.97e-04 pred_PSNR: 48.78
+[2025/06/17 12:30:39] Rank:None, Epoch[201/300], Step [103/103], lr:2.97e-04 pred_PSNR: 48.66
+[2025/06/17 12:30:40] Rank:None, Epoch[202/300], Step [1/103], lr:2.97e-04 pred_PSNR: 47.87
+[2025/06/17 12:30:41] Rank:None, Epoch[202/300], Step [51/103], lr:2.94e-04 pred_PSNR: 48.27
+[2025/06/17 12:30:41] Rank:None, Epoch[202/300], Step [101/103], lr:2.91e-04 pred_PSNR: 48.38
+[2025/06/17 12:30:41] Rank:None, Epoch[202/300], Step [103/103], lr:2.91e-04 pred_PSNR: 48.47
+[2025/06/17 12:30:42] Rank:None, Epoch[203/300], Step [1/103], lr:2.91e-04 pred_PSNR: 50.5
+[2025/06/17 12:30:42] Rank:None, Epoch[203/300], Step [51/103], lr:2.89e-04 pred_PSNR: 49.94
+[2025/06/17 12:30:43] Rank:None, Epoch[203/300], Step [101/103], lr:2.86e-04 pred_PSNR: 49.03
+[2025/06/17 12:30:43] Rank:None, Epoch[203/300], Step [103/103], lr:2.86e-04 pred_PSNR: 49.05
+[2025/06/17 12:30:44] Rank:None, Epoch[204/300], Step [1/103], lr:2.86e-04 pred_PSNR: 49.48
+[2025/06/17 12:30:44] Rank:None, Epoch[204/300], Step [51/103], lr:2.84e-04 pred_PSNR: 48.68
+[2025/06/17 12:30:45] Rank:None, Epoch[204/300], Step [101/103], lr:2.81e-04 pred_PSNR: 48.86
+[2025/06/17 12:30:45] Rank:None, Epoch[204/300], Step [103/103], lr:2.81e-04 pred_PSNR: 48.9
+[2025/06/17 12:30:45] Rank:None, Epoch[205/300], Step [1/103], lr:2.81e-04 pred_PSNR: 50.54
+[2025/06/17 12:30:46] Rank:None, Epoch[205/300], Step [51/103], lr:2.78e-04 pred_PSNR: 49.56
+[2025/06/17 12:30:47] Rank:None, Epoch[205/300], Step [101/103], lr:2.76e-04 pred_PSNR: 49.09
+[2025/06/17 12:30:47] Rank:None, Epoch[205/300], Step [103/103], lr:2.76e-04 pred_PSNR: 49.01
+[2025/06/17 12:30:47] Rank:None, Epoch[206/300], Step [1/103], lr:2.76e-04 pred_PSNR: 50.14
+[2025/06/17 12:30:48] Rank:None, Epoch[206/300], Step [51/103], lr:2.73e-04 pred_PSNR: 48.98
+[2025/06/17 12:30:49] Rank:None, Epoch[206/300], Step [101/103], lr:2.71e-04 pred_PSNR: 48.94
+[2025/06/17 12:30:49] Rank:None, Epoch[206/300], Step [103/103], lr:2.70e-04 pred_PSNR: 48.92
+[2025/06/17 12:30:49] Rank:None, Epoch[207/300], Step [1/103], lr:2.70e-04 pred_PSNR: 52.77
+[2025/06/17 12:30:50] Rank:None, Epoch[207/300], Step [51/103], lr:2.68e-04 pred_PSNR: 49.06
+[2025/06/17 12:30:51] Rank:None, Epoch[207/300], Step [101/103], lr:2.65e-04 pred_PSNR: 48.76
+[2025/06/17 12:30:51] Rank:None, Epoch[207/300], Step [103/103], lr:2.65e-04 pred_PSNR: 48.82
+[2025/06/17 12:30:51] Rank:None, Epoch[208/300], Step [1/103], lr:2.65e-04 pred_PSNR: 49.86
+[2025/06/17 12:30:52] Rank:None, Epoch[208/300], Step [51/103], lr:2.63e-04 pred_PSNR: 48.72
+[2025/06/17 12:30:52] Rank:None, Epoch[208/300], Step [101/103], lr:2.60e-04 pred_PSNR: 48.91
+[2025/06/17 12:30:52] Rank:None, Epoch[208/300], Step [103/103], lr:2.60e-04 pred_PSNR: 48.95
+[2025/06/17 12:30:53] Rank:None, Epoch[209/300], Step [1/103], lr:2.60e-04 pred_PSNR: 43.44
+[2025/06/17 12:30:54] Rank:None, Epoch[209/300], Step [51/103], lr:2.58e-04 pred_PSNR: 49.36
+[2025/06/17 12:30:54] Rank:None, Epoch[209/300], Step [101/103], lr:2.55e-04 pred_PSNR: 49.12
+[2025/06/17 12:30:54] Rank:None, Epoch[209/300], Step [103/103], lr:2.55e-04 pred_PSNR: 49.15
+[2025/06/17 12:30:55] Rank:None, Epoch[210/300], Step [1/103], lr:2.55e-04 pred_PSNR: 51.35
+[2025/06/17 12:30:56] Rank:None, Epoch[210/300], Step [51/103], lr:2.53e-04 pred_PSNR: 49.18
+[2025/06/17 12:30:56] Rank:None, Epoch[210/300], Step [101/103], lr:2.50e-04 pred_PSNR: 49.08
+[2025/06/17 12:30:56] Rank:None, Epoch[210/300], Step [103/103], lr:2.50e-04 pred_PSNR: 49.11
+[2025/06/17 12:30:57] Rank:None, Eval at Step [1/103] , FPS 169.5, pred_seen_psnr: 53.74 | 
+[2025/06/17 12:30:57] Rank:None, Eval at Step [51/103] , FPS 262.7, pred_seen_psnr: 49.64 | 
+[2025/06/17 12:30:57] Rank:None, Eval at Step [101/103] , FPS 264.2, pred_seen_psnr: 49.66 | 
+[2025/06/17 12:30:57] Rank:None, Eval at Step [103/103] , FPS 264.3, pred_seen_psnr: 49.64 | 
+[2025/06/17 12:30:58] Rank:None, Eval at Step [1/103] , FPS 196.7, quant_seen_psnr: 52.36 | 
+[2025/06/17 12:30:58] Rank:None, Eval at Step [51/103] , FPS 264.3, quant_seen_psnr: 49.35 | 
+[2025/06/17 12:30:58] Rank:None, Eval at Step [101/103] , FPS 266.0, quant_seen_psnr: 49.52 | 
+[2025/06/17 12:30:58] Rank:None, Eval at Step [103/103] , FPS 266.0, quant_seen_psnr: 49.51 | 
+Eval at epoch 210 for (720, 360): pred_seen_psnr: 49.64 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 49.51 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:30:59] Rank:None, Epoch[211/300], Step [1/103], lr:2.50e-04 pred_PSNR: 50.15
+[2025/06/17 12:31:00] Rank:None, Epoch[211/300], Step [51/103], lr:2.48e-04 pred_PSNR: 49.24
+[2025/06/17 12:31:00] Rank:None, Epoch[211/300], Step [101/103], lr:2.45e-04 pred_PSNR: 49.25
+[2025/06/17 12:31:00] Rank:None, Epoch[211/300], Step [103/103], lr:2.45e-04 pred_PSNR: 49.25
+[2025/06/17 12:31:01] Rank:None, Epoch[212/300], Step [1/103], lr:2.45e-04 pred_PSNR: 52.37
+[2025/06/17 12:31:01] Rank:None, Epoch[212/300], Step [51/103], lr:2.43e-04 pred_PSNR: 49.7
+[2025/06/17 12:31:02] Rank:None, Epoch[212/300], Step [101/103], lr:2.40e-04 pred_PSNR: 49.44
+[2025/06/17 12:31:02] Rank:None, Epoch[212/300], Step [103/103], lr:2.40e-04 pred_PSNR: 49.44
+[2025/06/17 12:31:03] Rank:None, Epoch[213/300], Step [1/103], lr:2.40e-04 pred_PSNR: 52.26
+[2025/06/17 12:31:03] Rank:None, Epoch[213/300], Step [51/103], lr:2.38e-04 pred_PSNR: 49.29
+[2025/06/17 12:31:04] Rank:None, Epoch[213/300], Step [101/103], lr:2.35e-04 pred_PSNR: 49.42
+[2025/06/17 12:31:04] Rank:None, Epoch[213/300], Step [103/103], lr:2.35e-04 pred_PSNR: 49.41
+[2025/06/17 12:31:05] Rank:None, Epoch[214/300], Step [1/103], lr:2.35e-04 pred_PSNR: 52.72
+[2025/06/17 12:31:05] Rank:None, Epoch[214/300], Step [51/103], lr:2.33e-04 pred_PSNR: 49.3
+[2025/06/17 12:31:06] Rank:None, Epoch[214/300], Step [101/103], lr:2.30e-04 pred_PSNR: 49.58
+[2025/06/17 12:31:06] Rank:None, Epoch[214/300], Step [103/103], lr:2.30e-04 pred_PSNR: 49.59
+[2025/06/17 12:31:06] Rank:None, Epoch[215/300], Step [1/103], lr:2.30e-04 pred_PSNR: 43.0
+[2025/06/17 12:31:07] Rank:None, Epoch[215/300], Step [51/103], lr:2.28e-04 pred_PSNR: 49.63
+[2025/06/17 12:31:08] Rank:None, Epoch[215/300], Step [101/103], lr:2.25e-04 pred_PSNR: 49.68
+[2025/06/17 12:31:08] Rank:None, Epoch[215/300], Step [103/103], lr:2.25e-04 pred_PSNR: 49.69
+[2025/06/17 12:31:08] Rank:None, Epoch[216/300], Step [1/103], lr:2.25e-04 pred_PSNR: 51.93
+[2025/06/17 12:31:09] Rank:None, Epoch[216/300], Step [51/103], lr:2.23e-04 pred_PSNR: 48.79
+[2025/06/17 12:31:10] Rank:None, Epoch[216/300], Step [101/103], lr:2.21e-04 pred_PSNR: 49.39
+[2025/06/17 12:31:10] Rank:None, Epoch[216/300], Step [103/103], lr:2.20e-04 pred_PSNR: 49.39
+[2025/06/17 12:31:10] Rank:None, Epoch[217/300], Step [1/103], lr:2.20e-04 pred_PSNR: 52.56
+[2025/06/17 12:31:11] Rank:None, Epoch[217/300], Step [51/103], lr:2.18e-04 pred_PSNR: 48.46
+[2025/06/17 12:31:12] Rank:None, Epoch[217/300], Step [101/103], lr:2.16e-04 pred_PSNR: 49.34
+[2025/06/17 12:31:12] Rank:None, Epoch[217/300], Step [103/103], lr:2.16e-04 pred_PSNR: 49.39
+[2025/06/17 12:31:12] Rank:None, Epoch[218/300], Step [1/103], lr:2.16e-04 pred_PSNR: 49.72
+[2025/06/17 12:31:13] Rank:None, Epoch[218/300], Step [51/103], lr:2.13e-04 pred_PSNR: 49.17
+[2025/06/17 12:31:13] Rank:None, Epoch[218/300], Step [101/103], lr:2.11e-04 pred_PSNR: 49.5
+[2025/06/17 12:31:13] Rank:None, Epoch[218/300], Step [103/103], lr:2.11e-04 pred_PSNR: 49.48
+[2025/06/17 12:31:14] Rank:None, Epoch[219/300], Step [1/103], lr:2.11e-04 pred_PSNR: 47.99
+[2025/06/17 12:31:15] Rank:None, Epoch[219/300], Step [51/103], lr:2.09e-04 pred_PSNR: 49.24
+[2025/06/17 12:31:15] Rank:None, Epoch[219/300], Step [101/103], lr:2.06e-04 pred_PSNR: 49.65
+[2025/06/17 12:31:15] Rank:None, Epoch[219/300], Step [103/103], lr:2.06e-04 pred_PSNR: 49.61
+[2025/06/17 12:31:16] Rank:None, Epoch[220/300], Step [1/103], lr:2.06e-04 pred_PSNR: 52.52
+[2025/06/17 12:31:17] Rank:None, Epoch[220/300], Step [51/103], lr:2.04e-04 pred_PSNR: 50.25
+[2025/06/17 12:31:17] Rank:None, Epoch[220/300], Step [101/103], lr:2.02e-04 pred_PSNR: 49.99
+[2025/06/17 12:31:17] Rank:None, Epoch[220/300], Step [103/103], lr:2.01e-04 pred_PSNR: 49.87
+[2025/06/17 12:31:18] Rank:None, Epoch[221/300], Step [1/103], lr:2.01e-04 pred_PSNR: 54.85
+[2025/06/17 12:31:18] Rank:None, Epoch[221/300], Step [51/103], lr:1.99e-04 pred_PSNR: 50.5
+[2025/06/17 12:31:19] Rank:None, Epoch[221/300], Step [101/103], lr:1.97e-04 pred_PSNR: 49.83
+[2025/06/17 12:31:19] Rank:None, Epoch[221/300], Step [103/103], lr:1.97e-04 pred_PSNR: 49.82
+[2025/06/17 12:31:20] Rank:None, Epoch[222/300], Step [1/103], lr:1.97e-04 pred_PSNR: 52.57
+[2025/06/17 12:31:20] Rank:None, Epoch[222/300], Step [51/103], lr:1.95e-04 pred_PSNR: 50.46
+[2025/06/17 12:31:21] Rank:None, Epoch[222/300], Step [101/103], lr:1.92e-04 pred_PSNR: 49.76
+[2025/06/17 12:31:21] Rank:None, Epoch[222/300], Step [103/103], lr:1.92e-04 pred_PSNR: 49.77
+[2025/06/17 12:31:21] Rank:None, Epoch[223/300], Step [1/103], lr:1.92e-04 pred_PSNR: 52.72
+[2025/06/17 12:31:22] Rank:None, Epoch[223/300], Step [51/103], lr:1.90e-04 pred_PSNR: 50.0
+[2025/06/17 12:31:23] Rank:None, Epoch[223/300], Step [101/103], lr:1.88e-04 pred_PSNR: 49.9
+[2025/06/17 12:31:23] Rank:None, Epoch[223/300], Step [103/103], lr:1.88e-04 pred_PSNR: 49.83
+[2025/06/17 12:31:23] Rank:None, Epoch[224/300], Step [1/103], lr:1.88e-04 pred_PSNR: 53.36
+[2025/06/17 12:31:24] Rank:None, Epoch[224/300], Step [51/103], lr:1.85e-04 pred_PSNR: 50.49
+[2025/06/17 12:31:25] Rank:None, Epoch[224/300], Step [101/103], lr:1.83e-04 pred_PSNR: 50.28
+[2025/06/17 12:31:25] Rank:None, Epoch[224/300], Step [103/103], lr:1.83e-04 pred_PSNR: 50.07
+[2025/06/17 12:31:25] Rank:None, Epoch[225/300], Step [1/103], lr:1.83e-04 pred_PSNR: 50.9
+[2025/06/17 12:31:26] Rank:None, Epoch[225/300], Step [51/103], lr:1.81e-04 pred_PSNR: 49.25
+[2025/06/17 12:31:27] Rank:None, Epoch[225/300], Step [101/103], lr:1.79e-04 pred_PSNR: 49.98
+[2025/06/17 12:31:27] Rank:None, Epoch[225/300], Step [103/103], lr:1.79e-04 pred_PSNR: 49.94
+[2025/06/17 12:31:27] Rank:None, Epoch[226/300], Step [1/103], lr:1.79e-04 pred_PSNR: 50.46
+[2025/06/17 12:31:28] Rank:None, Epoch[226/300], Step [51/103], lr:1.76e-04 pred_PSNR: 49.5
+[2025/06/17 12:31:28] Rank:None, Epoch[226/300], Step [101/103], lr:1.74e-04 pred_PSNR: 49.87
+[2025/06/17 12:31:28] Rank:None, Epoch[226/300], Step [103/103], lr:1.74e-04 pred_PSNR: 49.88
+[2025/06/17 12:31:29] Rank:None, Epoch[227/300], Step [1/103], lr:1.74e-04 pred_PSNR: 50.31
+[2025/06/17 12:31:30] Rank:None, Epoch[227/300], Step [51/103], lr:1.72e-04 pred_PSNR: 50.75
+[2025/06/17 12:31:30] Rank:None, Epoch[227/300], Step [101/103], lr:1.70e-04 pred_PSNR: 50.17
+[2025/06/17 12:31:30] Rank:None, Epoch[227/300], Step [103/103], lr:1.70e-04 pred_PSNR: 50.14
+[2025/06/17 12:31:31] Rank:None, Epoch[228/300], Step [1/103], lr:1.70e-04 pred_PSNR: 33.73
+[2025/06/17 12:31:32] Rank:None, Epoch[228/300], Step [51/103], lr:1.68e-04 pred_PSNR: 49.8
+[2025/06/17 12:31:32] Rank:None, Epoch[228/300], Step [101/103], lr:1.66e-04 pred_PSNR: 50.04
+[2025/06/17 12:31:32] Rank:None, Epoch[228/300], Step [103/103], lr:1.65e-04 pred_PSNR: 49.99
+[2025/06/17 12:31:33] Rank:None, Epoch[229/300], Step [1/103], lr:1.65e-04 pred_PSNR: 52.85
+[2025/06/17 12:31:33] Rank:None, Epoch[229/300], Step [51/103], lr:1.63e-04 pred_PSNR: 49.62
+[2025/06/17 12:31:34] Rank:None, Epoch[229/300], Step [101/103], lr:1.61e-04 pred_PSNR: 49.79
+[2025/06/17 12:31:34] Rank:None, Epoch[229/300], Step [103/103], lr:1.61e-04 pred_PSNR: 49.74
+[2025/06/17 12:31:35] Rank:None, Epoch[230/300], Step [1/103], lr:1.61e-04 pred_PSNR: 52.5
+[2025/06/17 12:31:35] Rank:None, Epoch[230/300], Step [51/103], lr:1.59e-04 pred_PSNR: 50.41
+[2025/06/17 12:31:36] Rank:None, Epoch[230/300], Step [101/103], lr:1.57e-04 pred_PSNR: 49.85
+[2025/06/17 12:31:36] Rank:None, Epoch[230/300], Step [103/103], lr:1.57e-04 pred_PSNR: 49.88
+[2025/06/17 12:31:37] Rank:None, Epoch[231/300], Step [1/103], lr:1.57e-04 pred_PSNR: 47.96
+[2025/06/17 12:31:37] Rank:None, Epoch[231/300], Step [51/103], lr:1.55e-04 pred_PSNR: 50.22
+[2025/06/17 12:31:38] Rank:None, Epoch[231/300], Step [101/103], lr:1.53e-04 pred_PSNR: 50.24
+[2025/06/17 12:31:38] Rank:None, Epoch[231/300], Step [103/103], lr:1.53e-04 pred_PSNR: 50.26
+[2025/06/17 12:31:38] Rank:None, Epoch[232/300], Step [1/103], lr:1.53e-04 pred_PSNR: 53.11
+[2025/06/17 12:31:39] Rank:None, Epoch[232/300], Step [51/103], lr:1.51e-04 pred_PSNR: 50.68
+[2025/06/17 12:31:40] Rank:None, Epoch[232/300], Step [101/103], lr:1.49e-04 pred_PSNR: 50.32
+[2025/06/17 12:31:40] Rank:None, Epoch[232/300], Step [103/103], lr:1.49e-04 pred_PSNR: 50.32
+[2025/06/17 12:31:40] Rank:None, Epoch[233/300], Step [1/103], lr:1.49e-04 pred_PSNR: 50.11
+[2025/06/17 12:31:41] Rank:None, Epoch[233/300], Step [51/103], lr:1.47e-04 pred_PSNR: 50.98
+[2025/06/17 12:31:42] Rank:None, Epoch[233/300], Step [101/103], lr:1.45e-04 pred_PSNR: 50.46
+[2025/06/17 12:31:42] Rank:None, Epoch[233/300], Step [103/103], lr:1.44e-04 pred_PSNR: 50.4
+[2025/06/17 12:31:42] Rank:None, Epoch[234/300], Step [1/103], lr:1.44e-04 pred_PSNR: 51.21
+[2025/06/17 12:31:43] Rank:None, Epoch[234/300], Step [51/103], lr:1.42e-04 pred_PSNR: 50.66
+[2025/06/17 12:31:43] Rank:None, Epoch[234/300], Step [101/103], lr:1.40e-04 pred_PSNR: 50.36
+[2025/06/17 12:31:43] Rank:None, Epoch[234/300], Step [103/103], lr:1.40e-04 pred_PSNR: 50.26
+[2025/06/17 12:31:44] Rank:None, Epoch[235/300], Step [1/103], lr:1.40e-04 pred_PSNR: 51.04
+[2025/06/17 12:31:45] Rank:None, Epoch[235/300], Step [51/103], lr:1.38e-04 pred_PSNR: 50.44
+[2025/06/17 12:31:45] Rank:None, Epoch[235/300], Step [101/103], lr:1.36e-04 pred_PSNR: 50.25
+[2025/06/17 12:31:45] Rank:None, Epoch[235/300], Step [103/103], lr:1.36e-04 pred_PSNR: 50.25
+[2025/06/17 12:31:46] Rank:None, Epoch[236/300], Step [1/103], lr:1.36e-04 pred_PSNR: 50.8
+[2025/06/17 12:31:47] Rank:None, Epoch[236/300], Step [51/103], lr:1.34e-04 pred_PSNR: 50.09
+[2025/06/17 12:31:47] Rank:None, Epoch[236/300], Step [101/103], lr:1.32e-04 pred_PSNR: 50.28
+[2025/06/17 12:31:47] Rank:None, Epoch[236/300], Step [103/103], lr:1.32e-04 pred_PSNR: 50.33
+[2025/06/17 12:31:48] Rank:None, Epoch[237/300], Step [1/103], lr:1.32e-04 pred_PSNR: 51.79
+[2025/06/17 12:31:48] Rank:None, Epoch[237/300], Step [51/103], lr:1.30e-04 pred_PSNR: 50.47
+[2025/06/17 12:31:49] Rank:None, Epoch[237/300], Step [101/103], lr:1.29e-04 pred_PSNR: 50.35
+[2025/06/17 12:31:49] Rank:None, Epoch[237/300], Step [103/103], lr:1.28e-04 pred_PSNR: 50.41
+[2025/06/17 12:31:50] Rank:None, Epoch[238/300], Step [1/103], lr:1.28e-04 pred_PSNR: 42.08
+[2025/06/17 12:31:50] Rank:None, Epoch[238/300], Step [51/103], lr:1.27e-04 pred_PSNR: 50.66
+[2025/06/17 12:31:51] Rank:None, Epoch[238/300], Step [101/103], lr:1.25e-04 pred_PSNR: 50.4
+[2025/06/17 12:31:51] Rank:None, Epoch[238/300], Step [103/103], lr:1.25e-04 pred_PSNR: 50.44
+[2025/06/17 12:31:51] Rank:None, Epoch[239/300], Step [1/103], lr:1.25e-04 pred_PSNR: 54.8
+[2025/06/17 12:31:52] Rank:None, Epoch[239/300], Step [51/103], lr:1.23e-04 pred_PSNR: 50.13
+[2025/06/17 12:31:53] Rank:None, Epoch[239/300], Step [101/103], lr:1.21e-04 pred_PSNR: 50.38
+[2025/06/17 12:31:53] Rank:None, Epoch[239/300], Step [103/103], lr:1.21e-04 pred_PSNR: 50.43
+[2025/06/17 12:31:53] Rank:None, Epoch[240/300], Step [1/103], lr:1.21e-04 pred_PSNR: 48.49
+[2025/06/17 12:31:54] Rank:None, Epoch[240/300], Step [51/103], lr:1.19e-04 pred_PSNR: 49.76
+[2025/06/17 12:31:55] Rank:None, Epoch[240/300], Step [101/103], lr:1.17e-04 pred_PSNR: 50.06
+[2025/06/17 12:31:55] Rank:None, Epoch[240/300], Step [103/103], lr:1.17e-04 pred_PSNR: 50.1
+[2025/06/17 12:31:55] Rank:None, Eval at Step [1/103] , FPS 170.9, pred_seen_psnr: 48.78 | 
+[2025/06/17 12:31:55] Rank:None, Eval at Step [51/103] , FPS 261.4, pred_seen_psnr: 50.65 | 
+[2025/06/17 12:31:56] Rank:None, Eval at Step [101/103] , FPS 264.7, pred_seen_psnr: 50.6 | 
+[2025/06/17 12:31:56] Rank:None, Eval at Step [103/103] , FPS 264.7, pred_seen_psnr: 50.64 | 
+[2025/06/17 12:31:56] Rank:None, Eval at Step [1/103] , FPS 187.1, quant_seen_psnr: 49.27 | 
+[2025/06/17 12:31:56] Rank:None, Eval at Step [51/103] , FPS 264.4, quant_seen_psnr: 50.55 | 
+[2025/06/17 12:31:57] Rank:None, Eval at Step [101/103] , FPS 265.0, quant_seen_psnr: 50.57 | 
+[2025/06/17 12:31:57] Rank:None, Eval at Step [103/103] , FPS 265.1, quant_seen_psnr: 50.54 | 
+Eval at epoch 240 for (720, 360): pred_seen_psnr: 50.64 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 50.54 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:31:57] Rank:None, Epoch[241/300], Step [1/103], lr:1.17e-04 pred_PSNR: 54.17
+[2025/06/17 12:31:58] Rank:None, Epoch[241/300], Step [51/103], lr:1.15e-04 pred_PSNR: 51.17
+[2025/06/17 12:31:59] Rank:None, Epoch[241/300], Step [101/103], lr:1.13e-04 pred_PSNR: 50.48
+[2025/06/17 12:31:59] Rank:None, Epoch[241/300], Step [103/103], lr:1.13e-04 pred_PSNR: 50.51
+[2025/06/17 12:31:59] Rank:None, Epoch[242/300], Step [1/103], lr:1.13e-04 pred_PSNR: 38.09
+[2025/06/17 12:32:00] Rank:None, Epoch[242/300], Step [51/103], lr:1.11e-04 pred_PSNR: 50.15
+[2025/06/17 12:32:01] Rank:None, Epoch[242/300], Step [101/103], lr:1.10e-04 pred_PSNR: 50.61
+[2025/06/17 12:32:01] Rank:None, Epoch[242/300], Step [103/103], lr:1.10e-04 pred_PSNR: 50.57
+[2025/06/17 12:32:01] Rank:None, Epoch[243/300], Step [1/103], lr:1.10e-04 pred_PSNR: 53.56
+[2025/06/17 12:32:02] Rank:None, Epoch[243/300], Step [51/103], lr:1.08e-04 pred_PSNR: 50.35
+[2025/06/17 12:32:03] Rank:None, Epoch[243/300], Step [101/103], lr:1.06e-04 pred_PSNR: 50.6
+[2025/06/17 12:32:03] Rank:None, Epoch[243/300], Step [103/103], lr:1.06e-04 pred_PSNR: 50.63
+[2025/06/17 12:32:03] Rank:None, Epoch[244/300], Step [1/103], lr:1.06e-04 pred_PSNR: 44.77
+[2025/06/17 12:32:04] Rank:None, Epoch[244/300], Step [51/103], lr:1.04e-04 pred_PSNR: 50.38
+[2025/06/17 12:32:04] Rank:None, Epoch[244/300], Step [101/103], lr:1.03e-04 pred_PSNR: 50.69
+[2025/06/17 12:32:04] Rank:None, Epoch[244/300], Step [103/103], lr:1.02e-04 pred_PSNR: 50.74
+[2025/06/17 12:32:05] Rank:None, Epoch[245/300], Step [1/103], lr:1.02e-04 pred_PSNR: 53.84
+[2025/06/17 12:32:06] Rank:None, Epoch[245/300], Step [51/103], lr:1.01e-04 pred_PSNR: 50.94
+[2025/06/17 12:32:06] Rank:None, Epoch[245/300], Step [101/103], lr:9.90e-05 pred_PSNR: 50.74
+[2025/06/17 12:32:06] Rank:None, Epoch[245/300], Step [103/103], lr:9.90e-05 pred_PSNR: 50.73
+[2025/06/17 12:32:07] Rank:None, Epoch[246/300], Step [1/103], lr:9.89e-05 pred_PSNR: 43.99
+[2025/06/17 12:32:08] Rank:None, Epoch[246/300], Step [51/103], lr:9.73e-05 pred_PSNR: 50.88
+[2025/06/17 12:32:08] Rank:None, Epoch[246/300], Step [101/103], lr:9.56e-05 pred_PSNR: 50.78
+[2025/06/17 12:32:08] Rank:None, Epoch[246/300], Step [103/103], lr:9.55e-05 pred_PSNR: 50.76
+[2025/06/17 12:32:09] Rank:None, Epoch[247/300], Step [1/103], lr:9.55e-05 pred_PSNR: 38.1
+[2025/06/17 12:32:09] Rank:None, Epoch[247/300], Step [51/103], lr:9.38e-05 pred_PSNR: 50.18
+[2025/06/17 12:32:10] Rank:None, Epoch[247/300], Step [101/103], lr:9.22e-05 pred_PSNR: 50.74
+[2025/06/17 12:32:10] Rank:None, Epoch[247/300], Step [103/103], lr:9.21e-05 pred_PSNR: 50.74
+[2025/06/17 12:32:11] Rank:None, Epoch[248/300], Step [1/103], lr:9.21e-05 pred_PSNR: 51.11
+[2025/06/17 12:32:11] Rank:None, Epoch[248/300], Step [51/103], lr:9.05e-05 pred_PSNR: 51.06
+[2025/06/17 12:32:12] Rank:None, Epoch[248/300], Step [101/103], lr:8.89e-05 pred_PSNR: 50.73
+[2025/06/17 12:32:12] Rank:None, Epoch[248/300], Step [103/103], lr:8.88e-05 pred_PSNR: 50.78
+[2025/06/17 12:32:13] Rank:None, Epoch[249/300], Step [1/103], lr:8.88e-05 pred_PSNR: 53.67
+[2025/06/17 12:32:13] Rank:None, Epoch[249/300], Step [51/103], lr:8.72e-05 pred_PSNR: 51.24
+[2025/06/17 12:32:14] Rank:None, Epoch[249/300], Step [101/103], lr:8.56e-05 pred_PSNR: 50.91
+[2025/06/17 12:32:14] Rank:None, Epoch[249/300], Step [103/103], lr:8.55e-05 pred_PSNR: 50.86
+[2025/06/17 12:32:14] Rank:None, Epoch[250/300], Step [1/103], lr:8.55e-05 pred_PSNR: 54.4
+[2025/06/17 12:32:15] Rank:None, Epoch[250/300], Step [51/103], lr:8.39e-05 pred_PSNR: 50.42
+[2025/06/17 12:32:16] Rank:None, Epoch[250/300], Step [101/103], lr:8.23e-05 pred_PSNR: 50.81
+[2025/06/17 12:32:16] Rank:None, Epoch[250/300], Step [103/103], lr:8.23e-05 pred_PSNR: 50.82
+[2025/06/17 12:32:16] Rank:None, Epoch[251/300], Step [1/103], lr:8.23e-05 pred_PSNR: 53.75
+[2025/06/17 12:32:17] Rank:None, Epoch[251/300], Step [51/103], lr:8.07e-05 pred_PSNR: 50.79
+[2025/06/17 12:32:18] Rank:None, Epoch[251/300], Step [101/103], lr:7.92e-05 pred_PSNR: 50.82
+[2025/06/17 12:32:18] Rank:None, Epoch[251/300], Step [103/103], lr:7.91e-05 pred_PSNR: 50.83
+[2025/06/17 12:32:18] Rank:None, Epoch[252/300], Step [1/103], lr:7.91e-05 pred_PSNR: 53.17
+[2025/06/17 12:32:19] Rank:None, Epoch[252/300], Step [51/103], lr:7.76e-05 pred_PSNR: 51.09
+[2025/06/17 12:32:20] Rank:None, Epoch[252/300], Step [101/103], lr:7.61e-05 pred_PSNR: 50.98
+[2025/06/17 12:32:20] Rank:None, Epoch[252/300], Step [103/103], lr:7.60e-05 pred_PSNR: 50.85
+[2025/06/17 12:32:20] Rank:None, Epoch[253/300], Step [1/103], lr:7.60e-05 pred_PSNR: 54.06
+[2025/06/17 12:32:21] Rank:None, Epoch[253/300], Step [51/103], lr:7.45e-05 pred_PSNR: 50.44
+[2025/06/17 12:32:21] Rank:None, Epoch[253/300], Step [101/103], lr:7.30e-05 pred_PSNR: 50.88
+[2025/06/17 12:32:21] Rank:None, Epoch[253/300], Step [103/103], lr:7.30e-05 pred_PSNR: 50.87
+[2025/06/17 12:32:22] Rank:None, Epoch[254/300], Step [1/103], lr:7.29e-05 pred_PSNR: 55.6
+[2025/06/17 12:32:23] Rank:None, Epoch[254/300], Step [51/103], lr:7.15e-05 pred_PSNR: 50.71
+[2025/06/17 12:32:23] Rank:None, Epoch[254/300], Step [101/103], lr:7.00e-05 pred_PSNR: 50.89
+[2025/06/17 12:32:23] Rank:None, Epoch[254/300], Step [103/103], lr:7.00e-05 pred_PSNR: 50.79
+[2025/06/17 12:32:24] Rank:None, Epoch[255/300], Step [1/103], lr:6.99e-05 pred_PSNR: 50.9
+[2025/06/17 12:32:25] Rank:None, Epoch[255/300], Step [51/103], lr:6.85e-05 pred_PSNR: 51.55
+[2025/06/17 12:32:25] Rank:None, Epoch[255/300], Step [101/103], lr:6.71e-05 pred_PSNR: 50.93
+[2025/06/17 12:32:25] Rank:None, Epoch[255/300], Step [103/103], lr:6.70e-05 pred_PSNR: 50.89
+[2025/06/17 12:32:26] Rank:None, Epoch[256/300], Step [1/103], lr:6.70e-05 pred_PSNR: 48.73
+[2025/06/17 12:32:26] Rank:None, Epoch[256/300], Step [51/103], lr:6.56e-05 pred_PSNR: 50.92
+[2025/06/17 12:32:27] Rank:None, Epoch[256/300], Step [101/103], lr:6.42e-05 pred_PSNR: 50.91
+[2025/06/17 12:32:27] Rank:None, Epoch[256/300], Step [103/103], lr:6.41e-05 pred_PSNR: 50.92
+[2025/06/17 12:32:28] Rank:None, Epoch[257/300], Step [1/103], lr:6.41e-05 pred_PSNR: 50.69
+[2025/06/17 12:32:28] Rank:None, Epoch[257/300], Step [51/103], lr:6.27e-05 pred_PSNR: 51.29
+[2025/06/17 12:32:29] Rank:None, Epoch[257/300], Step [101/103], lr:6.14e-05 pred_PSNR: 50.89
+[2025/06/17 12:32:29] Rank:None, Epoch[257/300], Step [103/103], lr:6.13e-05 pred_PSNR: 50.95
+[2025/06/17 12:32:30] Rank:None, Epoch[258/300], Step [1/103], lr:6.13e-05 pred_PSNR: 39.32
+[2025/06/17 12:32:30] Rank:None, Epoch[258/300], Step [51/103], lr:5.99e-05 pred_PSNR: 50.14
+[2025/06/17 12:32:31] Rank:None, Epoch[258/300], Step [101/103], lr:5.86e-05 pred_PSNR: 50.91
+[2025/06/17 12:32:31] Rank:None, Epoch[258/300], Step [103/103], lr:5.86e-05 pred_PSNR: 50.98
+[2025/06/17 12:32:31] Rank:None, Epoch[259/300], Step [1/103], lr:5.85e-05 pred_PSNR: 50.71
+[2025/06/17 12:32:32] Rank:None, Epoch[259/300], Step [51/103], lr:5.72e-05 pred_PSNR: 50.95
+[2025/06/17 12:32:33] Rank:None, Epoch[259/300], Step [101/103], lr:5.59e-05 pred_PSNR: 50.98
+[2025/06/17 12:32:33] Rank:None, Epoch[259/300], Step [103/103], lr:5.59e-05 pred_PSNR: 50.99
+[2025/06/17 12:32:33] Rank:None, Epoch[260/300], Step [1/103], lr:5.58e-05 pred_PSNR: 55.04
+[2025/06/17 12:32:34] Rank:None, Epoch[260/300], Step [51/103], lr:5.45e-05 pred_PSNR: 50.99
+[2025/06/17 12:32:35] Rank:None, Epoch[260/300], Step [101/103], lr:5.33e-05 pred_PSNR: 51.0
+[2025/06/17 12:32:35] Rank:None, Epoch[260/300], Step [103/103], lr:5.32e-05 pred_PSNR: 51.01
+[2025/06/17 12:32:35] Rank:None, Epoch[261/300], Step [1/103], lr:5.32e-05 pred_PSNR: 51.93
+[2025/06/17 12:32:36] Rank:None, Epoch[261/300], Step [51/103], lr:5.19e-05 pred_PSNR: 50.66
+[2025/06/17 12:32:37] Rank:None, Epoch[261/300], Step [101/103], lr:5.07e-05 pred_PSNR: 50.95
+[2025/06/17 12:32:37] Rank:None, Epoch[261/300], Step [103/103], lr:5.06e-05 pred_PSNR: 51.02
+[2025/06/17 12:32:37] Rank:None, Epoch[262/300], Step [1/103], lr:5.06e-05 pred_PSNR: 51.77
+[2025/06/17 12:32:38] Rank:None, Epoch[262/300], Step [51/103], lr:4.94e-05 pred_PSNR: 50.74
+[2025/06/17 12:32:38] Rank:None, Epoch[262/300], Step [101/103], lr:4.82e-05 pred_PSNR: 50.97
+[2025/06/17 12:32:38] Rank:None, Epoch[262/300], Step [103/103], lr:4.81e-05 pred_PSNR: 51.01
+[2025/06/17 12:32:39] Rank:None, Epoch[263/300], Step [1/103], lr:4.81e-05 pred_PSNR: 55.28
+[2025/06/17 12:32:40] Rank:None, Epoch[263/300], Step [51/103], lr:4.69e-05 pred_PSNR: 51.32
+[2025/06/17 12:32:40] Rank:None, Epoch[263/300], Step [101/103], lr:4.57e-05 pred_PSNR: 50.95
+[2025/06/17 12:32:40] Rank:None, Epoch[263/300], Step [103/103], lr:4.56e-05 pred_PSNR: 51.01
+[2025/06/17 12:32:41] Rank:None, Epoch[264/300], Step [1/103], lr:4.56e-05 pred_PSNR: 53.84
+[2025/06/17 12:32:42] Rank:None, Epoch[264/300], Step [51/103], lr:4.45e-05 pred_PSNR: 51.08
+[2025/06/17 12:32:42] Rank:None, Epoch[264/300], Step [101/103], lr:4.33e-05 pred_PSNR: 51.04
+[2025/06/17 12:32:42] Rank:None, Epoch[264/300], Step [103/103], lr:4.33e-05 pred_PSNR: 51.06
+[2025/06/17 12:32:43] Rank:None, Epoch[265/300], Step [1/103], lr:4.32e-05 pred_PSNR: 49.45
+[2025/06/17 12:32:43] Rank:None, Epoch[265/300], Step [51/103], lr:4.21e-05 pred_PSNR: 51.21
+[2025/06/17 12:32:44] Rank:None, Epoch[265/300], Step [101/103], lr:4.10e-05 pred_PSNR: 51.02
+[2025/06/17 12:32:44] Rank:None, Epoch[265/300], Step [103/103], lr:4.09e-05 pred_PSNR: 51.08
+[2025/06/17 12:32:45] Rank:None, Epoch[266/300], Step [1/103], lr:4.09e-05 pred_PSNR: 47.31
+[2025/06/17 12:32:45] Rank:None, Epoch[266/300], Step [51/103], lr:3.98e-05 pred_PSNR: 51.37
+[2025/06/17 12:32:46] Rank:None, Epoch[266/300], Step [101/103], lr:3.87e-05 pred_PSNR: 51.23
+[2025/06/17 12:32:46] Rank:None, Epoch[266/300], Step [103/103], lr:3.86e-05 pred_PSNR: 51.06
+[2025/06/17 12:32:47] Rank:None, Epoch[267/300], Step [1/103], lr:3.86e-05 pred_PSNR: 47.46
+[2025/06/17 12:32:47] Rank:None, Epoch[267/300], Step [51/103], lr:3.75e-05 pred_PSNR: 51.31
+[2025/06/17 12:32:48] Rank:None, Epoch[267/300], Step [101/103], lr:3.65e-05 pred_PSNR: 51.04
+[2025/06/17 12:32:48] Rank:None, Epoch[267/300], Step [103/103], lr:3.64e-05 pred_PSNR: 51.09
+[2025/06/17 12:32:48] Rank:None, Epoch[268/300], Step [1/103], lr:3.64e-05 pred_PSNR: 49.67
+[2025/06/17 12:32:49] Rank:None, Epoch[268/300], Step [51/103], lr:3.54e-05 pred_PSNR: 51.17
+[2025/06/17 12:32:50] Rank:None, Epoch[268/300], Step [101/103], lr:3.43e-05 pred_PSNR: 51.06
+[2025/06/17 12:32:50] Rank:None, Epoch[268/300], Step [103/103], lr:3.43e-05 pred_PSNR: 51.09
+[2025/06/17 12:32:50] Rank:None, Epoch[269/300], Step [1/103], lr:3.43e-05 pred_PSNR: 50.67
+[2025/06/17 12:32:51] Rank:None, Epoch[269/300], Step [51/103], lr:3.32e-05 pred_PSNR: 50.85
+[2025/06/17 12:32:52] Rank:None, Epoch[269/300], Step [101/103], lr:3.22e-05 pred_PSNR: 51.17
+[2025/06/17 12:32:52] Rank:None, Epoch[269/300], Step [103/103], lr:3.22e-05 pred_PSNR: 51.12
+[2025/06/17 12:32:52] Rank:None, Epoch[270/300], Step [1/103], lr:3.22e-05 pred_PSNR: 51.93
+[2025/06/17 12:32:53] Rank:None, Epoch[270/300], Step [51/103], lr:3.12e-05 pred_PSNR: 50.99
+[2025/06/17 12:32:53] Rank:None, Epoch[270/300], Step [101/103], lr:3.02e-05 pred_PSNR: 51.11
+[2025/06/17 12:32:53] Rank:None, Epoch[270/300], Step [103/103], lr:3.02e-05 pred_PSNR: 51.13
+[2025/06/17 12:32:54] Rank:None, Eval at Step [1/103] , FPS 170.0, pred_seen_psnr: 51.91 | 
+[2025/06/17 12:32:54] Rank:None, Eval at Step [51/103] , FPS 263.7, pred_seen_psnr: 51.11 | 
+[2025/06/17 12:32:54] Rank:None, Eval at Step [101/103] , FPS 265.8, pred_seen_psnr: 51.18 | 
+[2025/06/17 12:32:54] Rank:None, Eval at Step [103/103] , FPS 265.9, pred_seen_psnr: 51.2 | 
+[2025/06/17 12:32:55] Rank:None, Eval at Step [1/103] , FPS 202.8, quant_seen_psnr: 54.49 | 
+[2025/06/17 12:32:55] Rank:None, Eval at Step [51/103] , FPS 265.0, quant_seen_psnr: 51.01 | 
+[2025/06/17 12:32:55] Rank:None, Eval at Step [101/103] , FPS 266.2, quant_seen_psnr: 51.03 | 
+[2025/06/17 12:32:56] Rank:None, Eval at Step [103/103] , FPS 266.3, quant_seen_psnr: 51.05 | 
+Eval at epoch 270 for (720, 360): pred_seen_psnr: 51.2 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 51.05 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:32:56] Rank:None, Epoch[271/300], Step [1/103], lr:3.02e-05 pred_PSNR: 55.96
+[2025/06/17 12:32:57] Rank:None, Epoch[271/300], Step [51/103], lr:2.92e-05 pred_PSNR: 51.87
+[2025/06/17 12:32:57] Rank:None, Epoch[271/300], Step [101/103], lr:2.83e-05 pred_PSNR: 51.07
+[2025/06/17 12:32:58] Rank:None, Epoch[271/300], Step [103/103], lr:2.82e-05 pred_PSNR: 51.13
+[2025/06/17 12:32:58] Rank:None, Epoch[272/300], Step [1/103], lr:2.82e-05 pred_PSNR: 54.27
+[2025/06/17 12:32:59] Rank:None, Epoch[272/300], Step [51/103], lr:2.73e-05 pred_PSNR: 51.49
+[2025/06/17 12:32:59] Rank:None, Epoch[272/300], Step [101/103], lr:2.64e-05 pred_PSNR: 51.14
+[2025/06/17 12:32:59] Rank:None, Epoch[272/300], Step [103/103], lr:2.63e-05 pred_PSNR: 51.13
+[2025/06/17 12:33:00] Rank:None, Epoch[273/300], Step [1/103], lr:2.63e-05 pred_PSNR: 53.96
+[2025/06/17 12:33:00] Rank:None, Epoch[273/300], Step [51/103], lr:2.54e-05 pred_PSNR: 51.17
+[2025/06/17 12:33:01] Rank:None, Epoch[273/300], Step [101/103], lr:2.45e-05 pred_PSNR: 51.12
+[2025/06/17 12:33:01] Rank:None, Epoch[273/300], Step [103/103], lr:2.45e-05 pred_PSNR: 51.15
+[2025/06/17 12:33:02] Rank:None, Epoch[274/300], Step [1/103], lr:2.45e-05 pred_PSNR: 50.29
+[2025/06/17 12:33:02] Rank:None, Epoch[274/300], Step [51/103], lr:2.36e-05 pred_PSNR: 51.21
+[2025/06/17 12:33:03] Rank:None, Epoch[274/300], Step [101/103], lr:2.28e-05 pred_PSNR: 51.09
+[2025/06/17 12:33:03] Rank:None, Epoch[274/300], Step [103/103], lr:2.27e-05 pred_PSNR: 51.14
+[2025/06/17 12:33:03] Rank:None, Epoch[275/300], Step [1/103], lr:2.27e-05 pred_PSNR: 50.74
+[2025/06/17 12:33:04] Rank:None, Epoch[275/300], Step [51/103], lr:2.19e-05 pred_PSNR: 51.16
+[2025/06/17 12:33:05] Rank:None, Epoch[275/300], Step [101/103], lr:2.11e-05 pred_PSNR: 51.27
+[2025/06/17 12:33:05] Rank:None, Epoch[275/300], Step [103/103], lr:2.10e-05 pred_PSNR: 51.18
+[2025/06/17 12:33:05] Rank:None, Epoch[276/300], Step [1/103], lr:2.10e-05 pred_PSNR: 53.91
+[2025/06/17 12:33:06] Rank:None, Epoch[276/300], Step [51/103], lr:2.02e-05 pred_PSNR: 50.87
+[2025/06/17 12:33:07] Rank:None, Epoch[276/300], Step [101/103], lr:1.94e-05 pred_PSNR: 51.15
+[2025/06/17 12:33:07] Rank:None, Epoch[276/300], Step [103/103], lr:1.94e-05 pred_PSNR: 51.19
+[2025/06/17 12:33:07] Rank:None, Epoch[277/300], Step [1/103], lr:1.94e-05 pred_PSNR: 34.04
+[2025/06/17 12:33:08] Rank:None, Epoch[277/300], Step [51/103], lr:1.86e-05 pred_PSNR: 51.29
+[2025/06/17 12:33:09] Rank:None, Epoch[277/300], Step [101/103], lr:1.78e-05 pred_PSNR: 51.14
+[2025/06/17 12:33:09] Rank:None, Epoch[277/300], Step [103/103], lr:1.78e-05 pred_PSNR: 51.19
+[2025/06/17 12:33:09] Rank:None, Epoch[278/300], Step [1/103], lr:1.78e-05 pred_PSNR: 51.85
+[2025/06/17 12:33:10] Rank:None, Epoch[278/300], Step [51/103], lr:1.71e-05 pred_PSNR: 51.25
+[2025/06/17 12:33:10] Rank:None, Epoch[278/300], Step [101/103], lr:1.63e-05 pred_PSNR: 51.18
+[2025/06/17 12:33:10] Rank:None, Epoch[278/300], Step [103/103], lr:1.63e-05 pred_PSNR: 51.19
+[2025/06/17 12:33:11] Rank:None, Epoch[279/300], Step [1/103], lr:1.63e-05 pred_PSNR: 54.06
+[2025/06/17 12:33:12] Rank:None, Epoch[279/300], Step [51/103], lr:1.56e-05 pred_PSNR: 51.79
+[2025/06/17 12:33:12] Rank:None, Epoch[279/300], Step [101/103], lr:1.49e-05 pred_PSNR: 51.17
+[2025/06/17 12:33:12] Rank:None, Epoch[279/300], Step [103/103], lr:1.49e-05 pred_PSNR: 51.2
+[2025/06/17 12:33:13] Rank:None, Epoch[280/300], Step [1/103], lr:1.49e-05 pred_PSNR: 49.58
+[2025/06/17 12:33:14] Rank:None, Epoch[280/300], Step [51/103], lr:1.42e-05 pred_PSNR: 51.3
+[2025/06/17 12:33:14] Rank:None, Epoch[280/300], Step [101/103], lr:1.35e-05 pred_PSNR: 51.21
+[2025/06/17 12:33:14] Rank:None, Epoch[280/300], Step [103/103], lr:1.35e-05 pred_PSNR: 51.2
+[2025/06/17 12:33:15] Rank:None, Epoch[281/300], Step [1/103], lr:1.35e-05 pred_PSNR: 54.0
+[2025/06/17 12:33:15] Rank:None, Epoch[281/300], Step [51/103], lr:1.28e-05 pred_PSNR: 51.6
+[2025/06/17 12:33:16] Rank:None, Epoch[281/300], Step [101/103], lr:1.22e-05 pred_PSNR: 51.21
+[2025/06/17 12:33:16] Rank:None, Epoch[281/300], Step [103/103], lr:1.22e-05 pred_PSNR: 51.22
+[2025/06/17 12:33:17] Rank:None, Epoch[282/300], Step [1/103], lr:1.22e-05 pred_PSNR: 54.61
+[2025/06/17 12:33:17] Rank:None, Epoch[282/300], Step [51/103], lr:1.16e-05 pred_PSNR: 50.79
+[2025/06/17 12:33:18] Rank:None, Epoch[282/300], Step [101/103], lr:1.10e-05 pred_PSNR: 51.17
+[2025/06/17 12:33:18] Rank:None, Epoch[282/300], Step [103/103], lr:1.09e-05 pred_PSNR: 51.22
+[2025/06/17 12:33:18] Rank:None, Epoch[283/300], Step [1/103], lr:1.09e-05 pred_PSNR: 52.03
+[2025/06/17 12:33:19] Rank:None, Epoch[283/300], Step [51/103], lr:1.03e-05 pred_PSNR: 51.77
+[2025/06/17 12:33:20] Rank:None, Epoch[283/300], Step [101/103], lr:9.78e-06 pred_PSNR: 51.28
+[2025/06/17 12:33:20] Rank:None, Epoch[283/300], Step [103/103], lr:9.76e-06 pred_PSNR: 51.22
+[2025/06/17 12:33:20] Rank:None, Epoch[284/300], Step [1/103], lr:9.75e-06 pred_PSNR: 49.71
+[2025/06/17 12:33:21] Rank:None, Epoch[284/300], Step [51/103], lr:9.20e-06 pred_PSNR: 51.12
+[2025/06/17 12:33:22] Rank:None, Epoch[284/300], Step [101/103], lr:8.67e-06 pred_PSNR: 51.34
+[2025/06/17 12:33:22] Rank:None, Epoch[284/300], Step [103/103], lr:8.65e-06 pred_PSNR: 51.23
+[2025/06/17 12:33:22] Rank:None, Epoch[285/300], Step [1/103], lr:8.64e-06 pred_PSNR: 52.78
+[2025/06/17 12:33:23] Rank:None, Epoch[285/300], Step [51/103], lr:8.12e-06 pred_PSNR: 51.73
+[2025/06/17 12:33:23] Rank:None, Epoch[285/300], Step [101/103], lr:7.63e-06 pred_PSNR: 51.22
+[2025/06/17 12:33:24] Rank:None, Epoch[285/300], Step [103/103], lr:7.61e-06 pred_PSNR: 51.24
+[2025/06/17 12:33:24] Rank:None, Epoch[286/300], Step [1/103], lr:7.60e-06 pred_PSNR: 54.4
+[2025/06/17 12:33:25] Rank:None, Epoch[286/300], Step [51/103], lr:7.11e-06 pred_PSNR: 50.54
+[2025/06/17 12:33:25] Rank:None, Epoch[286/300], Step [101/103], lr:6.65e-06 pred_PSNR: 51.23
+[2025/06/17 12:33:25] Rank:None, Epoch[286/300], Step [103/103], lr:6.63e-06 pred_PSNR: 51.24
+[2025/06/17 12:33:26] Rank:None, Epoch[287/300], Step [1/103], lr:6.62e-06 pred_PSNR: 54.34
+[2025/06/17 12:33:27] Rank:None, Epoch[287/300], Step [51/103], lr:6.17e-06 pred_PSNR: 50.89
+[2025/06/17 12:33:27] Rank:None, Epoch[287/300], Step [101/103], lr:5.73e-06 pred_PSNR: 51.2
+[2025/06/17 12:33:27] Rank:None, Epoch[287/300], Step [103/103], lr:5.72e-06 pred_PSNR: 51.25
+[2025/06/17 12:33:28] Rank:None, Epoch[288/300], Step [1/103], lr:5.71e-06 pred_PSNR: 52.72
+[2025/06/17 12:33:28] Rank:None, Epoch[288/300], Step [51/103], lr:5.29e-06 pred_PSNR: 51.43
+[2025/06/17 12:33:29] Rank:None, Epoch[288/300], Step [101/103], lr:4.89e-06 pred_PSNR: 51.24
+[2025/06/17 12:33:29] Rank:None, Epoch[288/300], Step [103/103], lr:4.87e-06 pred_PSNR: 51.25
+[2025/06/17 12:33:30] Rank:None, Epoch[289/300], Step [1/103], lr:4.87e-06 pred_PSNR: 52.89
+[2025/06/17 12:33:30] Rank:None, Epoch[289/300], Step [51/103], lr:4.48e-06 pred_PSNR: 52.04
+[2025/06/17 12:33:31] Rank:None, Epoch[289/300], Step [101/103], lr:4.11e-06 pred_PSNR: 51.22
+[2025/06/17 12:33:31] Rank:None, Epoch[289/300], Step [103/103], lr:4.10e-06 pred_PSNR: 51.26
+[2025/06/17 12:33:32] Rank:None, Epoch[290/300], Step [1/103], lr:4.09e-06 pred_PSNR: 54.59
+[2025/06/17 12:33:32] Rank:None, Epoch[290/300], Step [51/103], lr:3.74e-06 pred_PSNR: 51.15
+[2025/06/17 12:33:33] Rank:None, Epoch[290/300], Step [101/103], lr:3.40e-06 pred_PSNR: 51.25
+[2025/06/17 12:33:33] Rank:None, Epoch[290/300], Step [103/103], lr:3.39e-06 pred_PSNR: 51.26
+[2025/06/17 12:33:33] Rank:None, Epoch[291/300], Step [1/103], lr:3.38e-06 pred_PSNR: 56.07
+[2025/06/17 12:33:34] Rank:None, Epoch[291/300], Step [51/103], lr:3.06e-06 pred_PSNR: 50.61
+[2025/06/17 12:33:35] Rank:None, Epoch[291/300], Step [101/103], lr:2.76e-06 pred_PSNR: 51.24
+[2025/06/17 12:33:35] Rank:None, Epoch[291/300], Step [103/103], lr:2.74e-06 pred_PSNR: 51.26
+[2025/06/17 12:33:35] Rank:None, Epoch[292/300], Step [1/103], lr:2.74e-06 pred_PSNR: 54.61
+[2025/06/17 12:33:36] Rank:None, Epoch[292/300], Step [51/103], lr:2.45e-06 pred_PSNR: 51.49
+[2025/06/17 12:33:37] Rank:None, Epoch[292/300], Step [101/103], lr:2.18e-06 pred_PSNR: 51.2
+[2025/06/17 12:33:37] Rank:None, Epoch[292/300], Step [103/103], lr:2.17e-06 pred_PSNR: 51.26
+[2025/06/17 12:33:37] Rank:None, Epoch[293/300], Step [1/103], lr:2.16e-06 pred_PSNR: 53.88
+[2025/06/17 12:33:38] Rank:None, Epoch[293/300], Step [51/103], lr:1.91e-06 pred_PSNR: 51.84
+[2025/06/17 12:33:39] Rank:None, Epoch[293/300], Step [101/103], lr:1.67e-06 pred_PSNR: 51.24
+[2025/06/17 12:33:39] Rank:None, Epoch[293/300], Step [103/103], lr:1.66e-06 pred_PSNR: 51.27
+[2025/06/17 12:33:39] Rank:None, Epoch[294/300], Step [1/103], lr:1.66e-06 pred_PSNR: 45.38
+[2025/06/17 12:33:40] Rank:None, Epoch[294/300], Step [51/103], lr:1.44e-06 pred_PSNR: 51.01
+[2025/06/17 12:33:41] Rank:None, Epoch[294/300], Step [101/103], lr:1.23e-06 pred_PSNR: 51.22
+[2025/06/17 12:33:41] Rank:None, Epoch[294/300], Step [103/103], lr:1.22e-06 pred_PSNR: 51.27
+[2025/06/17 12:33:41] Rank:None, Epoch[295/300], Step [1/103], lr:1.22e-06 pred_PSNR: 52.62
+[2025/06/17 12:33:42] Rank:None, Epoch[295/300], Step [51/103], lr:1.03e-06 pred_PSNR: 52.01
+[2025/06/17 12:33:42] Rank:None, Epoch[295/300], Step [101/103], lr:8.56e-07 pred_PSNR: 51.23
+[2025/06/17 12:33:43] Rank:None, Epoch[295/300], Step [103/103], lr:8.49e-07 pred_PSNR: 51.27
+[2025/06/17 12:33:43] Rank:None, Epoch[296/300], Step [1/103], lr:8.46e-07 pred_PSNR: 45.94
+[2025/06/17 12:33:44] Rank:None, Epoch[296/300], Step [51/103], lr:6.90e-07 pred_PSNR: 51.32
+[2025/06/17 12:33:44] Rank:None, Epoch[296/300], Step [101/103], lr:5.49e-07 pred_PSNR: 51.24
+[2025/06/17 12:33:44] Rank:None, Epoch[296/300], Step [103/103], lr:5.44e-07 pred_PSNR: 51.27
+[2025/06/17 12:33:45] Rank:None, Eval at Step [1/103] , FPS 157.9, pred_seen_psnr: 52.64 | 
+[2025/06/17 12:33:45] Rank:None, Eval at Step [51/103] , FPS 261.5, pred_seen_psnr: 51.26 | 
+[2025/06/17 12:33:45] Rank:None, Eval at Step [101/103] , FPS 263.8, pred_seen_psnr: 51.27 | 
+[2025/06/17 12:33:45] Rank:None, Eval at Step [103/103] , FPS 263.9, pred_seen_psnr: 51.28 | 
+[2025/06/17 12:33:46] Rank:None, Eval at Step [1/103] , FPS 183.5, quant_seen_psnr: 51.4 | 
+[2025/06/17 12:33:46] Rank:None, Eval at Step [51/103] , FPS 265.2, quant_seen_psnr: 50.57 | 
+[2025/06/17 12:33:46] Rank:None, Eval at Step [101/103] , FPS 266.8, quant_seen_psnr: 51.07 | 
+[2025/06/17 12:33:46] Rank:None, Eval at Step [103/103] , FPS 266.8, quant_seen_psnr: 51.12 | 
+Eval at epoch 296 for (720, 360): pred_seen_psnr: 51.28 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 51.12 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:33:47] Rank:None, Epoch[297/300], Step [1/103], lr:5.41e-07 pred_PSNR: 54.46
+[2025/06/17 12:33:48] Rank:None, Epoch[297/300], Step [51/103], lr:4.18e-07 pred_PSNR: 50.92
+[2025/06/17 12:33:48] Rank:None, Epoch[297/300], Step [101/103], lr:3.11e-07 pred_PSNR: 51.21
+[2025/06/17 12:33:48] Rank:None, Epoch[297/300], Step [103/103], lr:3.07e-07 pred_PSNR: 51.27
+[2025/06/17 12:33:49] Rank:None, Epoch[298/300], Step [1/103], lr:3.05e-07 pred_PSNR: 55.45
+[2025/06/17 12:33:50] Rank:None, Epoch[298/300], Step [51/103], lr:2.14e-07 pred_PSNR: 51.72
+[2025/06/17 12:33:50] Rank:None, Epoch[298/300], Step [101/103], lr:1.39e-07 pred_PSNR: 51.3
+[2025/06/17 12:33:50] Rank:None, Epoch[298/300], Step [103/103], lr:1.37e-07 pred_PSNR: 51.27
+[2025/06/17 12:33:51] Rank:None, Eval at Step [1/103] , FPS 160.3, pred_seen_psnr: 54.24 | 
+[2025/06/17 12:33:51] Rank:None, Eval at Step [51/103] , FPS 262.7, pred_seen_psnr: 51.05 | 
+[2025/06/17 12:33:51] Rank:None, Eval at Step [101/103] , FPS 263.9, pred_seen_psnr: 51.2 | 
+[2025/06/17 12:33:51] Rank:None, Eval at Step [103/103] , FPS 264.0, pred_seen_psnr: 51.28 | 
+[2025/06/17 12:33:52] Rank:None, Eval at Step [1/103] , FPS 191.6, quant_seen_psnr: 48.18 | 
+[2025/06/17 12:33:52] Rank:None, Eval at Step [51/103] , FPS 265.1, quant_seen_psnr: 51.01 | 
+[2025/06/17 12:33:52] Rank:None, Eval at Step [101/103] , FPS 267.0, quant_seen_psnr: 51.1 | 
+[2025/06/17 12:33:52] Rank:None, Eval at Step [103/103] , FPS 267.1, quant_seen_psnr: 51.12 | 
+Eval at epoch 298 for (720, 360): pred_seen_psnr: 51.28 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 51.12 | quant_unseen_psnr: 0.0 | 
+[2025/06/17 12:33:53] Rank:None, Epoch[299/300], Step [1/103], lr:1.35e-07 pred_PSNR: 49.64
+[2025/06/17 12:33:54] Rank:None, Epoch[299/300], Step [51/103], lr:7.76e-08 pred_PSNR: 51.31
+[2025/06/17 12:33:54] Rank:None, Epoch[299/300], Step [101/103], lr:3.58e-08 pred_PSNR: 51.24
+[2025/06/17 12:33:54] Rank:None, Epoch[299/300], Step [103/103], lr:3.45e-08 pred_PSNR: 51.27
+[2025/06/17 12:33:55] Rank:None, Epoch[300/300], Step [1/103], lr:3.38e-08 pred_PSNR: 53.43
+[2025/06/17 12:33:56] Rank:None, Epoch[300/300], Step [51/103], lr:8.96e-09 pred_PSNR: 51.45
+[2025/06/17 12:33:56] Rank:None, Epoch[300/300], Step [101/103], lr:2.87e-11 pred_PSNR: 51.33
+[2025/06/17 12:33:56] Rank:None, Epoch[300/300], Step [103/103], lr:3.19e-12 pred_PSNR: 51.28
+[2025/06/17 12:33:57] Rank:None, Eval at Step [1/103] , FPS 163.4, pred_seen_psnr: 52.64 | 
+[2025/06/17 12:33:57] Rank:None, Eval at Step [51/103] , FPS 263.7, pred_seen_psnr: 51.66 | 
+[2025/06/17 12:33:57] Rank:None, Eval at Step [101/103] , FPS 265.7, pred_seen_psnr: 51.23 | 
+[2025/06/17 12:33:57] Rank:None, Eval at Step [103/103] , FPS 265.8, pred_seen_psnr: 51.28 | 
+[2025/06/17 12:33:58] Rank:None, Eval at Step [1/103] , FPS 191.5, quant_seen_psnr: 52.5 | 
+[2025/06/17 12:33:58] Rank:None, Eval at Step [51/103] , FPS 264.1, quant_seen_psnr: 51.16 | 
+[2025/06/17 12:33:58] Rank:None, Eval at Step [101/103] , FPS 265.5, quant_seen_psnr: 51.19 | 
+[2025/06/17 12:33:58] Rank:None, Eval at Step [103/103] , FPS 265.6, quant_seen_psnr: 51.12 | 
+Eval at epoch 300 for (720, 360): pred_seen_psnr: 51.28 | pred_unseen_psnr: 0.0 | quant_seen_psnr: 51.12 | quant_unseen_psnr: 0.0 | 
