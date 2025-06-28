@@ -1,6 +1,6 @@
 # HINER: Neural Representation for Hyperspectral Image
 
-* **Note:** This HINER repository is taken from https://paperswithcode.com/paper/hiner-neural-representation-for-hyperspectral#code. No changes were made to this code as it was already configured for PaviaU dataset which aligns with our objective. The sole purpose of presenting this code here is to facilitate the readers and developers and make access easier to all the codes discussed in our paper.
+* **Note:** This HINER repository is taken from https://paperswithcode.com/paper/hiner-neural-representation-for-hyperspectral#code. No changes were made to this code as it was already configured for PaviaU dataset which aligns with our objective. We are thankful to the authors for sharing their code. The sole purpose of presenting this code here is to facilitate the readers and developers and make access easier to all the codes discussed in our paper.
   
 ## Overview
 This is the official implementation of HINER (ACM MM'24), a novel neural representation for **compressing HSI** and **ensuring high-quality downstream tasks on compressed HSI**.
