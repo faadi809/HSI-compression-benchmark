@@ -79,7 +79,7 @@ You can change **--arch** and **--mode** to test other networks. For reproducing
 Junqi Shi: junqishi@smail.nju.edu.cn
 
 ## Citation
-If our work assists your research, feel free to give us a star ⭐ or cite us using:
+If this work assists your research, feel free to give a star ⭐ or cite using:
 ```bash
 @inproceedings{shi2024hiner,
   title={HINER: Neural Representation for Hyperspectral Image},
